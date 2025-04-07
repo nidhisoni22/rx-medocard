@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using RxMedoWeb.Data;
 using RxMedoWeb.Models;
 
 namespace RxMedoWeb.Controllers
@@ -6,10 +7,12 @@ namespace RxMedoWeb.Controllers
     public class MembershipController : Controller
     {
         private readonly ILogger<MembershipController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public MembershipController(ILogger<MembershipController> logger)
+        public MembershipController(ILogger<MembershipController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -22,11 +25,17 @@ namespace RxMedoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                // In a real application, save the membership application to a database
-                _logger.LogInformation($"Membership application received from {membership.FullName}");
-
-                // Generate a random membership number (in a real app, this would be more sophisticated)
+                // Generate a random membership number
                 membership.MembershipNumber = "RX" + DateTime.Now.ToString("yyyyMMdd") + new Random().Next(1000, 9999).ToString();
+
+                // Set application date to current date and time
+                membership.ApplicationDate = DateTime.Now;
+
+                // Save the membership application to the database
+                _context.Memberships.Add(membership);
+                _context.SaveChanges();
+
+                _logger.LogInformation($"Membership application saved to database for {membership.FullName} with ID {membership.Id}");
 
                 // Redirect to the same page with a success message
                 TempData["SuccessMessage"] = $"Your membership application has been submitted successfully. Your temporary membership number is {membership.MembershipNumber}. We will contact you shortly to complete the process.";

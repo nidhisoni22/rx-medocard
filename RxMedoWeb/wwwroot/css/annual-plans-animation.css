@@ -1,0 +1,221 @@
+/* Annual Plans Section Animation and Styling */
+
+.annual-plans-section {
+  padding: 5rem 0;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+}
+
+.annual-plans-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(26, 35, 126, 0.03);
+  z-index: 1;
+}
+
+.annual-plans-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: rgba(229, 57, 53, 0.03);
+  z-index: 1;
+}
+
+.annual-plans-image {
+  position: relative;
+  z-index: 2;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.annual-plans-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 35, 126, 0.2), rgba(229, 57, 53, 0.2));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.annual-plans-image:hover::before {
+  opacity: 1;
+}
+
+.annual-plans-image img {
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.annual-plans-image:hover img {
+  transform: scale(1.05);
+}
+
+.annual-plans-content {
+  position: relative;
+  z-index: 2;
+  padding-left: 20px;
+}
+
+.annual-plans-content h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.annual-plans-content h2 .text-primary {
+  color: #1A237E !important;
+  position: relative;
+}
+
+.annual-plans-content h2 .text-primary::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #1A237E;
+  border-radius: 2px;
+}
+
+.annual-plans-content p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.annual-plans-content ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #444;
+  transition: all 0.3s ease;
+}
+
+.annual-plans-content ul li i {
+  color: #1A237E;
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+}
+
+.annual-plans-content ul li:hover {
+  transform: translateX(5px);
+}
+
+.browse-button {
+  display: inline-flex;
+  align-items: center;
+  color: #1A237E;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  background-color: rgba(26, 35, 126, 0.05);
+  transition: all 0.3s ease;
+}
+
+.browse-button i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.browse-button:hover {
+  background-color: rgba(26, 35, 126, 0.1);
+  color: #1A237E;
+  box-shadow: 0 5px 15px rgba(26, 35, 126, 0.1);
+}
+
+.browse-button:hover i {
+  transform: translateY(3px);
+}
+
+/* Animation classes */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease;
+}
+
+.slide-in-left.active,
+.slide-in-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.fade-in-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .annual-plans-section {
+    padding: 4rem 0;
+  }
+  
+  .annual-plans-image {
+    margin-bottom: 2rem;
+  }
+  
+  .annual-plans-content {
+    padding-left: 0;
+  }
+  
+  .annual-plans-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .annual-plans-section {
+    padding: 3rem 0;
+  }
+  
+  .annual-plans-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .annual-plans-content p,
+  .annual-plans-content ul li {
+    font-size: 1rem;
+  }
+}

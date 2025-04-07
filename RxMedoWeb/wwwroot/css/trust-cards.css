@@ -1,0 +1,235 @@
+/* Trust Cards Section Styling */
+
+.trust-cards-section {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-cards-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(26, 35, 126, 0.03);
+  z-index: 1;
+}
+
+.trust-cards-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: rgba(26, 35, 126, 0.02);
+  z-index: 1;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.section-title .title-underline {
+  width: 80px;
+  height: 4px;
+  background-color: #1A237E;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: expandWidth 0.8s ease forwards 0.3s;
+}
+
+.trust-card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.trust-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.trust-card.card-1 {
+  animation: fadeInUp 0.8s ease forwards 0.3s;
+}
+
+.trust-card.card-2 {
+  animation: fadeInUp 0.8s ease forwards 0.5s;
+}
+
+.trust-card.card-3 {
+  animation: fadeInUp 0.8s ease forwards 0.7s;
+}
+
+.trust-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.trust-card-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #1A237E;
+}
+
+.trust-card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.trust-card-body {
+  padding: 1.5rem;
+}
+
+.trust-card-body p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.trust-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+.trust-features {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.trust-features li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.trust-features li:last-child {
+  margin-bottom: 0;
+}
+
+.trust-features li .check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #1A237E;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: white;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  color: #1A237E;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.learn-more-link i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.learn-more-link:hover {
+  color: #303F9F;
+  text-decoration: none;
+}
+
+.learn-more-link:hover i {
+  transform: translateX(5px);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .trust-cards-section {
+    padding: 4rem 0;
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+  }
+  
+  .trust-card {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .trust-cards-section {
+    padding: 3rem 0;
+  }
+  
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+}

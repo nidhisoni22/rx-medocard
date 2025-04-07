@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RxMedoWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fa5263c2942e9fefd035e2fa526efdf2f58910c")]
 [assembly: System.Reflection.AssemblyProductAttribute("RxMedoWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RxMedoWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

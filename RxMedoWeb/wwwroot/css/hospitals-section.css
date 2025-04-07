@@ -1,0 +1,199 @@
+/* Hospitals Section Styling */
+
+.hospitals-section {
+  background-color: #f8f9fa;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a237e' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  position: relative;
+  overflow: hidden;
+}
+
+.hospitals-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(26, 35, 126, 0.03);
+  z-index: 1;
+}
+
+.hospitals-content {
+  position: relative;
+  z-index: 2;
+  padding-right: 20px;
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hospitals-content h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+.hospitals-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #1A237E, #3949AB);
+  border-radius: 3px;
+}
+
+.hospitals-content .lead {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hospitals-features {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hospitals-features li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  color: #444;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.hospitals-features li:nth-child(1) { animation-delay: 0.3s; }
+.hospitals-features li:nth-child(2) { animation-delay: 0.5s; }
+.hospitals-features li:nth-child(3) { animation-delay: 0.7s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hospitals-features li i {
+  color: #1A237E;
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+.hospitals-image {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hospitals-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hospitals-image img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hospitals-section .btn-primary {
+  padding: 0.7rem 1.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #1A237E, #3949AB);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(26, 35, 126, 0.2);
+}
+
+.hospitals-section .btn-primary i {
+  transition: transform 0.3s ease;
+}
+
+.hospitals-section .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(26, 35, 126, 0.3);
+  background: linear-gradient(135deg, #3949AB, #1A237E);
+}
+
+.hospitals-section .btn-primary:hover i {
+  transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .hospitals-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .hospitals-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hospitals-image {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hospitals-section {
+    padding: 3rem 0;
+  }
+
+  .hospitals-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .hospitals-features li {
+    font-size: 1rem;
+  }
+}

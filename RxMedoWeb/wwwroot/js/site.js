@@ -2,6 +2,38 @@
 
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
+    // Clean navbar - no scroll effect needed
+
+    // Set active nav item based on current page
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href) {
+            // Extract the controller name from the href
+            const hrefParts = href.split('/');
+            const controller = hrefParts[1] || '';
+
+            // Extract the controller name from the current path
+            const pathParts = currentPath.split('/');
+            const currentController = pathParts[1] || '';
+
+            if (controller && currentController && controller.toLowerCase() === currentController.toLowerCase()) {
+                link.closest('.nav-item')?.classList.add('active');
+            } else if (currentPath === '/' && (href === '/' || controller.toLowerCase() === 'home')) {
+                link.closest('.nav-item')?.classList.add('active');
+            }
+        }
+    });
+
+    // Fix for navbar toggler
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    if (navbarToggler) {
+        navbarToggler.addEventListener('click', function() {
+            this.classList.toggle('collapsed');
+        });
+    }
     // Initialize Bootstrap tooltips
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

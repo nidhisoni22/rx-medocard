@@ -1,0 +1,245 @@
+/* Hospitals Section V2 - Modern Design with Animations */
+
+.hospitals-section-v2 {
+  background-color: #f8f9fa;
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* Background elements */
+.hospitals-section-v2::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(26, 35, 126, 0.03);
+  top: -150px;
+  right: -150px;
+  z-index: 1;
+}
+
+.hospitals-section-v2::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(26, 35, 126, 0.02);
+  bottom: -100px;
+  left: -100px;
+  z-index: 1;
+}
+
+/* Content styling */
+.hospitals-content-v2 {
+  position: relative;
+  z-index: 2;
+  padding-right: 20px;
+}
+
+.hospitals-content-v2 h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background-color: #1A237E;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: expandWidth 0.8s ease forwards 0.3s;
+}
+
+.hospitals-content-v2 .lead {
+  color: #555;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards 0.4s;
+}
+
+/* Features list styling */
+.hospitals-features-v2 {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hospitals-features-v2 li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #444;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.6s ease forwards;
+  animation-delay: var(--delay, 0.3s);
+}
+
+.check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #1A237E;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: white;
+  font-size: 0.8rem;
+}
+
+/* Button styling */
+.find-hospitals-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #1A237E;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards 0.9s;
+}
+
+.find-hospitals-btn i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.find-hospitals-btn:hover {
+  background-color: #303F9F;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(26, 35, 126, 0.2);
+  color: white;
+  text-decoration: none;
+}
+
+.find-hospitals-btn:hover i {
+  transform: translateX(5px);
+}
+
+/* Image styling */
+.hospitals-image-v2 {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.animate-image {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeInRight 1s ease forwards 0.5s;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Floating animation for the image */
+.animate-image {
+  animation: fadeInRight 1s ease forwards 0.5s, float 6s ease-in-out infinite 1.5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .hospitals-section-v2 {
+    padding: 60px 0;
+  }
+  
+  .hospitals-content-v2 {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .hospitals-content-v2 h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hospitals-section-v2 {
+    padding: 40px 0;
+  }
+  
+  .hospitals-content-v2 h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hospitals-features-v2 li {
+    font-size: 1rem;
+  }
+  
+  .find-hospitals-btn {
+    padding: 0.7rem 1.5rem;
+  }
+}

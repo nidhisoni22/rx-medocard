@@ -1,251 +1,327 @@
 {
   "Files": [
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/obj/Debug/net8.0/scopedcss/projectbundle/RxMedoWeb.bundle.scp.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/obj/Debug/net8.0/scopedcss/projectbundle/RxMedoWeb.bundle.scp.css",
       "PackagePath": "staticwebassets/RxMedoWeb.bundle.scp.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/css/site.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/about-section.css",
+      "PackagePath": "staticwebassets/css/about-section.css"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/annual-plans-animation.css",
+      "PackagePath": "staticwebassets/css/annual-plans-animation.css"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/hospitals-section-v2.css",
+      "PackagePath": "staticwebassets/css/hospitals-section-v2.css"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/hospitals-section.css",
+      "PackagePath": "staticwebassets/css/hospitals-section.css"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/modern-footer.css",
+      "PackagePath": "staticwebassets/css/modern-footer.css"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/modern-style.css",
+      "PackagePath": "staticwebassets/css/modern-style.css"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/navbar-clean.css",
+      "PackagePath": "staticwebassets/css/navbar-clean.css"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/navbar-modern.css",
+      "PackagePath": "staticwebassets/css/navbar-modern.css"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/services-animation.css",
+      "PackagePath": "staticwebassets/css/services-animation.css"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/favicon.ico",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/css/trust-cards.css",
+      "PackagePath": "staticwebassets/css/trust-cards.css"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/images/logo.svg",
-      "PackagePath": "staticwebassets/images/logo.svg"
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/images/doctors.jpg",
+      "PackagePath": "staticwebassets/images/doctors.jpg"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/js/site.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/images/group.png",
+      "PackagePath": "staticwebassets/images/group.png"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/images/hero2.png",
+      "PackagePath": "staticwebassets/images/hero2.png"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/images/logo.png",
+      "PackagePath": "staticwebassets/images/logo.png"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/images/patient.png",
+      "PackagePath": "staticwebassets/images/patient.png"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/images/pattern.svg",
+      "PackagePath": "staticwebassets/images/pattern.svg"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/images/rx-medocard-logo.svg",
+      "PackagePath": "staticwebassets/images/rx-medocard-logo.svg"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/images/rxmedical.jpeg",
+      "PackagePath": "staticwebassets/images/rxmedical.jpeg"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/images/v870-tang-36.eps",
+      "PackagePath": "staticwebassets/images/v870-tang-36.eps"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/images/v870-tang-36.jpg",
+      "PackagePath": "staticwebassets/images/v870-tang-36.jpg"
+    },
+    {
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/LICENSE",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/LICENSE",
       "PackagePath": "staticwebassets/lib/bootstrap"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery-validation/LICENSE.md",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery-validation/LICENSE.md",
       "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery-validation/dist/additional-methods.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
       "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery/LICENSE.txt",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery/LICENSE.txt",
       "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery/dist/jquery.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery/dist/jquery.js",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery/dist/jquery.min.js",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery/dist/jquery.min.js",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
     },
     {
-      "Id": "/Users/loveleenkaur/Desktop/RxMedo/RxMedoWeb/wwwroot/lib/jquery/dist/jquery.min.map",
+      "Id": "/Users/loveleenkaur/Desktop/RxMedoCard/rx-medocard/RxMedoWeb/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {

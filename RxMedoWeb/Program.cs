@@ -1,7 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using RxMedoWeb.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add DbContext
+builder.Services.AddDbContext<RxMedoWeb.Data.ApplicationDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+    ));
 
 var app = builder.Build();
 

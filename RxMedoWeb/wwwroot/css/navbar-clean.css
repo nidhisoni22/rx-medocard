@@ -1,0 +1,173 @@
+/* Clean Navbar Style - Similar to breastcancer.org */
+
+.header-clean {
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+/* Navbar base styles */
+.navbar {
+  padding: 0.4rem 0;
+  height: 80px;
+}
+
+/* Logo styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-image {
+  height: 55px;
+  width: auto;
+}
+
+.logo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1A237E;
+  line-height: 1.1;
+}
+
+.logo-subtitle {
+  font-size: 0.7rem;
+  color: #666;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  margin-top: 2px;
+}
+
+/* Navigation links */
+.navbar-nav .nav-item {
+  margin: 0 5px;
+}
+
+.navbar-nav .nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  padding: 0.35rem 0.5rem !important;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #E53935 !important;
+}
+
+.nav-icon {
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  margin-right: 3px;
+}
+
+.nav-text {
+  position: relative;
+}
+
+.nav-link:hover .nav-icon {
+  color: #E53935;
+}
+
+/* Active nav item */
+.nav-item.active .nav-link {
+  color: #E53935 !important;
+  font-weight: 600;
+}
+
+.nav-item.active .nav-icon {
+  color: #E53935;
+}
+
+/* Subtle underline effect */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #E53935;
+  transition: width 0.3s ease;
+  opacity: 0;
+}
+
+.navbar-nav .nav-link:hover::after,
+.nav-item.active .nav-link::after {
+  width: 100%;
+  opacity: 1;
+}
+
+/* Right side elements */
+.navbar-nav.ms-auto .nav-item {
+  margin-left: 0;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #1A237E;
+  border-color: #1A237E;
+  border-radius: 30px;
+  padding: 0.35rem 1.2rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  background-color: #303F9F;
+  border-color: #303F9F;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    padding-top: 1rem;
+  }
+
+  .navbar-nav.mx-auto {
+    margin: 0 !important;
+  }
+
+  .navbar-nav.ms-auto {
+    flex-direction: row;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+  }
+
+  .navbar-nav.ms-auto .nav-item {
+    margin-right: 10px;
+  }
+
+  .btn-primary {
+    margin-top: 0;
+  }
+}
