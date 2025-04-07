@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4">Join Our Membership Card Today!</h1>
+        <p class="lead">We are offering:</p>
+        <ul class="list-unstyled">
+            <li>Flat 20% Discount on the Pharmacy products</li>
+            <li>Flat 30% discount on Consultations</li>
+            <li>Flat 30% discount on the Diagnostics</li>
+        </ul>
+        <div class="mt-4">
+            <a asp-controller="Membership" asp-action="Index" class="btn btn-primary btn-lg me-2">Explore MedoCards</a>
+            <a asp-controller="Diagnostics" asp-action="Index" class="btn btn-outline-primary btn-lg">Book Discounted Diagnostic Tests</a>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">RXMedical Trust Annual Plans</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Benefits</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Reduce financial stress during medical emergencies</li>
+                        <li class="list-group-item">Improve health outcomes through better medication adherence</li>
+                        <li class="list-group-item">Save significantly on medical costs</li>
+                        <li class="list-group-item">Access quality healthcare more easily</li>
+                        <li class="list-group-item">Empower yourself for a healthier future</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="~/images/healthcare.jpg" class="img-fluid rounded" alt="Healthcare">
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Services</h2>
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <i class="bi bi-person-plus fs-1 mb-3"></i>
+                    <h4 class="card-title">Family Physician</h4>
+                    <p class="card-text">Personalized health solutions from our in-house Family Physicians for you & your family anytime anywhere</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <i class="bi bi-hospital fs-1 mb-3"></i>
+                    <h4 class="card-title">Specialists</h4>
+                    <p class="card-text">Schedule an appointment with our top specialists for specific health concerns</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <i class="bi bi-capsule fs-1 mb-3"></i>
+                    <h4 class="card-title">Order Medicines</h4>
+                    <p class="card-text">Heavily Discounted, Safe & Reliable doorstep delivery of your medicines across India</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <i class="bi bi-clipboard2-pulse fs-1 mb-3"></i>
+                    <h4 class="card-title">Book a Diagnostic Test</h4>
+                    <p class="card-text">Heavily Discounted High-Quality Health Screenings for you & your family members</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-light mt-5 py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2>Explore Top Hospitals Near You</h2>
+                <p class="lead">Quality Healthcare, Every City, Every Time</p>
+                <a asp-controller="Hospitals" asp-action="Index" class="btn btn-primary mt-3">Explore Hospitals</a>
+            </div>
+            <div class="col-md-6">
+                <img src="~/images/hospital.jpg" class="img-fluid rounded" alt="Hospital">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">RxMedical Trust Vision</h3>
+                    <p class="card-text">Up to 30% Discount: Diabetic individuals can access up to 30% off on essential services, including OPD consultations, pharmacy products (medications, diabetes supplies), and diagnostic tests.</p>
+                    <p class="card-text">Improved Access to Care: Our goal is to ensure that diabetes management, including regular check-ups and essential treatments, is more affordable and accessible for all patients.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">RxMedical Trust Mission</h3>
+                    <p class="card-text">Up to 30% Discount: Enjoy significant savings of up to 30% on a wide range of pharmacy products, including prescription medications, over-the-counter remedies, and health essentials.</p>
+                    <p class="card-text">Affordable Healthcare: Our mission is to make healthcare and medications more accessible by providing discounts, helping to reduce the financial burden on individuals and families.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">Rxmedical Trust Senior Care</h3>
+                    <p class="card-text">Rxmedical is a trusted provider of elderly care services for seniors at home in Delhi NCR, India. We provide Smart Solutions at the comfort of your home, and within Senior living communities with long-term care, memory care, and other areas of care.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <img src="~/images/about.jpg" class="img-fluid rounded" alt="About Us">
+        </div>
+        <div class="col-md-6">
+            <h2>About RXMedical Trust</h2>
+            <p>Get the care you deserve at a fraction of the cost with our exclusive 1-Year Card, offering discounts of up to 30% on a wide range of medical services. Whether you need routine check-ups, specialist consultations, diagnostic tests, or treatment procedures, our card provides significant savings to help you prioritize your health without worrying about the expense.</p>
+            <p>Valid for a full year, this offer ensures that you can access top-quality healthcare at affordable prices. Don't miss this limited-time opportunity to take control of your health—apply for your 1-Year Card today and start saving!</p>
+            <a asp-controller="Membership" asp-action="Index" class="btn btn-primary mt-3">Join Now</a>
+        </div>
+    </div>
+</div>

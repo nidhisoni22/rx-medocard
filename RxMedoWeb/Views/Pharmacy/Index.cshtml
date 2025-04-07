@@ -1,0 +1,56 @@
+@{
+    ViewData["Title"] = "Pharmacy";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Pharmacy</h1>
+    <p>Order medicines with discounts and doorstep delivery.</p>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Order Medicines</h2>
+            <p>Heavily Discounted, Safe & Reliable doorstep delivery of your medicines across India.</p>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">RxMedical Trust Pharmacy Benefits</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Up to 30% Discount on a wide range of pharmacy products</li>
+                        <li class="list-group-item">Affordable Healthcare with reduced financial burden</li>
+                        <li class="list-group-item">Wide Range of Products including prescriptions, OTC remedies, and health essentials</li>
+                        <li class="list-group-item">Easy to Use - simply present your card at participating pharmacies</li>
+                        <li class="list-group-item">Promoting Health Equity for people from all walks of life</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="btn btn-primary mt-3">Order Now</a>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Upload Prescription</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prescription" class="form-label">Upload Prescription</label>
+                            <input type="file" class="form-control" id="prescription" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

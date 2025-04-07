@@ -1,0 +1,117 @@
+@model List<RxMedoWeb.Models.DiagnosticTest>
+@{
+    ViewData["Title"] = "Diagnostics";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Diagnostics</h1>
+    <p>Book discounted diagnostic tests for you and your family.</p>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Book a Diagnostic Test</h2>
+            <p>Heavily Discounted High-Quality Health Screenings for you & your family members.</p>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Available Diagnostic Tests</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Test Name</th>
+                                    <th>Original Price</th>
+                                    <th>Discounted Price</th>
+                                    <th>Discount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var test in Model)
+                                {
+                                    <tr>
+                                        <td>@test.Name</td>
+                                        <td>₹@test.OriginalPrice</td>
+                                        <td>₹@test.DiscountedPrice</td>
+                                        <td>@test.DiscountPercentage%</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Book a Test</h5>
+                    <form asp-controller="Diagnostics" asp-action="BookTest" method="post" class="needs-validation booking-form" novalidate>
+                        <div class="mb-3">
+                            <label for="PatientName" class="form-label">Patient Name</label>
+                            <input type="text" class="form-control" id="PatientName" name="PatientName" required>
+                            <div class="invalid-feedback">
+                                Please provide patient name.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="PatientAge" class="form-label">Patient Age</label>
+                            <input type="number" class="form-control" id="PatientAge" name="PatientAge" min="1" max="120" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid age (1-120).
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="PatientGender" class="form-label">Patient Gender</label>
+                            <select class="form-select" id="PatientGender" name="PatientGender" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select gender.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="TestType" class="form-label">Test Type</label>
+                            <select class="form-select" id="TestType" name="TestType" required>
+                                <option selected disabled value="">Choose...</option>
+                                @foreach (var test in Model)
+                                {
+                                    <option value="@test.Name">@test.Name - ₹@test.DiscountedPrice</option>
+                                }
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a test type.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="PreferredDate" class="form-label">Preferred Date</label>
+                            <input type="date" class="form-control" id="PreferredDate" name="PreferredDate" min="@DateTime.Now.ToString("yyyy-MM-dd")" required>
+                            <div class="invalid-feedback">
+                                Please select a valid date.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ContactNumber" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="ContactNumber" name="ContactNumber" required>
+                            <div class="invalid-feedback">
+                                Please provide a contact number.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

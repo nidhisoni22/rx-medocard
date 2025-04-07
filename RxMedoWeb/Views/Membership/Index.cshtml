@@ -1,0 +1,96 @@
+@model RxMedoWeb.Models.Membership
+@{
+    ViewData["Title"] = "Membership";
+}
+
+<div class="text-center">
+    <h1 class="display-4">RxMedo Membership Card</h1>
+    <p>Join our membership card today and enjoy exclusive benefits!</p>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Membership Benefits</h2>
+            <ul class="list-group mt-3">
+                <li class="list-group-item">Flat 20% Discount on the Pharmacy products</li>
+                <li class="list-group-item">Flat 30% discount on Consultations</li>
+                <li class="list-group-item">Flat 30% discount on the Diagnostics</li>
+                <li class="list-group-item">Reduce financial stress during medical emergencies</li>
+                <li class="list-group-item">Improve health outcomes through better medication adherence</li>
+                <li class="list-group-item">Save significantly on medical costs</li>
+                <li class="list-group-item">Access quality healthcare more easily</li>
+                <li class="list-group-item">Empower yourself for a healthier future</li>
+            </ul>
+            <div class="mt-4">
+                <h3>RxMedical Trust Annual Plans</h3>
+                <p>Get the care you deserve at a fraction of the cost with our exclusive 1-Year Card, offering discounts of up to 30% on a wide range of medical services. Whether you need routine check-ups, specialist consultations, diagnostic tests, or treatment procedures, our card provides significant savings to help you prioritize your health without worrying about the expense.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Apply for Membership</h5>
+                    <form asp-controller="Membership" asp-action="Apply" method="post" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="FullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="FullName" name="FullName" required>
+                            <div class="invalid-feedback">
+                                Please provide your full name.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="Email" name="Email" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email address.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="Phone" name="Phone" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid phone number.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Address" class="form-label">Address</label>
+                            <textarea class="form-control" id="Address" name="Address" rows="3" required></textarea>
+                            <div class="invalid-feedback">
+                                Please provide your address.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="DateOfBirth" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="DateOfBirth" name="DateOfBirth" required>
+                            <div class="invalid-feedback">
+                                Please provide your date of birth.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="MembershipType" class="form-label">Membership Type</label>
+                            <select class="form-select" id="MembershipType" name="MembershipType" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="Individual">Individual</option>
+                                <option value="Family">Family</option>
+                                <option value="Senior">Senior Citizen</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a membership type.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Apply Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
