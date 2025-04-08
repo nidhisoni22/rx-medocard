@@ -1,10 +1,11 @@
 /* Annual Plans Section Animation and Styling */
 
 .annual-plans-section {
-  padding: 5rem 0;
+  padding: 4rem 0 5rem 0; /* Reduced top padding */
   background-color: #f9f9f9;
   position: relative;
   overflow: hidden;
+  margin-top: -20px; /* Negative margin to connect with hero section */
 }
 
 .annual-plans-section::before {
@@ -191,15 +192,15 @@
   .annual-plans-section {
     padding: 4rem 0;
   }
-  
+
   .annual-plans-image {
     margin-bottom: 2rem;
   }
-  
+
   .annual-plans-content {
     padding-left: 0;
   }
-  
+
   .annual-plans-content h2 {
     font-size: 1.8rem;
   }
@@ -209,11 +210,11 @@
   .annual-plans-section {
     padding: 3rem 0;
   }
-  
+
   .annual-plans-content h2 {
     font-size: 1.6rem;
   }
-  
+
   .annual-plans-content p,
   .annual-plans-content ul li {
     font-size: 1rem;

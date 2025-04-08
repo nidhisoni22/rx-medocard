@@ -2,42 +2,183 @@
     ViewData["Title"] = "Hospitals";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Hospitals</h1>
-    <p>Explore top hospitals near you.</p>
-</div>
+<section class="hospitals-page">
+    <div class="container">
+        <!-- Page Header -->
+        <div class="hospitals-header">
+            <h1>Our Hospital Network</h1>
+            <div class="title-underline"></div>
+            <p>Discover premium healthcare facilities offering exclusive benefits for RX MEDO CARD members</p>
+        </div>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/images/hospital1.jpg" class="card-img-top" alt="Hospital 1">
-                <div class="card-body">
-                    <h5 class="card-title">City Hospital</h5>
-                    <p class="card-text">A premier healthcare facility offering comprehensive medical services.</p>
-                    <a href="#" class="btn btn-primary">View Details</a>
-                </div>
+        <!-- Hospital Network Banner -->
+        <div class="hospital-network" style="background-image: url('../images/pattern.svg'); background-size: 200px; background-repeat: repeat;">
+            <div class="hospital-network-content">
+                <h2>RxMedoCard Hospital Network</h2>
+                <p>RxMedoCard provides access to a premium network of over 500+ hospitals across India. Our members enjoy exclusive discounts, priority appointments, and reduced waiting times at partner healthcare facilities.</p>
+                <a href="#" class="btn">Learn More <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/images/hospital2.jpg" class="card-img-top" alt="Hospital 2">
-                <div class="card-body">
-                    <h5 class="card-title">Metro Medical Center</h5>
-                    <p class="card-text">State-of-the-art medical facility with expert healthcare professionals.</p>
-                    <a href="#" class="btn btn-primary">View Details</a>
+
+        <!-- Hospital Cards -->
+        <div class="hospital-cards-container">
+            <div class="row">
+                <!-- Manipal Hospital -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="hospital-card">
+                        <div class="hospital-card-img-container">
+                            <img src="~/images/manipal.webp" class="hospital-card-img" alt="Manipal Hospital">
+                            <div class="hospital-card-overlay"></div>
+                            <div class="hospital-card-rating">
+                                <i class="bi bi-star-fill"></i> 4.8
+                            </div>
+                        </div>
+                        <div class="hospital-card-content">
+                            <h3 class="hospital-card-title">Manipal Hospital</h3>
+                            <div class="hospital-card-location">
+                                <i class="bi bi-geo-alt-fill"></i> Bengaluru, Karnataka
+                            </div>
+                            <p class="hospital-card-description">A multi-specialty healthcare provider offering advanced medical treatments with state-of-the-art facilities.</p>
+                            <ul class="hospital-card-features">
+                                <li>Multi-Specialty</li>
+                                <li>24/7 Emergency</li>
+                                <li>Advanced Diagnostics</li>
+                            </ul>
+                            <a href="#" class="hospital-card-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="~/images/hospital3.jpg" class="card-img-top" alt="Hospital 3">
-                <div class="card-body">
-                    <h5 class="card-title">Community Health Center</h5>
-                    <p class="card-text">Dedicated to providing quality healthcare services to the community.</p>
-                    <a href="#" class="btn btn-primary">View Details</a>
+
+                <!-- Yashoda Hospital -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="hospital-card">
+                        <div class="hospital-card-img-container">
+                            <img src="~/images/yashoda.png" class="hospital-card-img" alt="Yashoda Hospital">
+                            <div class="hospital-card-overlay"></div>
+                            <div class="hospital-card-rating">
+                                <i class="bi bi-star-fill"></i> 4.7
+                            </div>
+                        </div>
+                        <div class="hospital-card-content">
+                            <h3 class="hospital-card-title">Yashoda Hospital</h3>
+                            <div class="hospital-card-location">
+                                <i class="bi bi-geo-alt-fill"></i> Hyderabad, Telangana
+                            </div>
+                            <p class="hospital-card-description">Renowned for its excellence in cardiac care, neurosciences, and organ transplantation with cutting-edge technology.</p>
+                            <ul class="hospital-card-features">
+                                <li>Cardiac Care</li>
+                                <li>Neurosciences</li>
+                                <li>Organ Transplant</li>
+                            </ul>
+                            <a href="#" class="hospital-card-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lilavati Hospital -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="hospital-card">
+                        <div class="hospital-card-img-container">
+                            <img src="~/images/lilavati.jpg" class="hospital-card-img" alt="Lilavati Hospital">
+                            <div class="hospital-card-overlay"></div>
+                            <div class="hospital-card-rating">
+                                <i class="bi bi-star-fill"></i> 4.6
+                            </div>
+                        </div>
+                        <div class="hospital-card-content">
+                            <h3 class="hospital-card-title">Lilavati Hospital</h3>
+                            <div class="hospital-card-location">
+                                <i class="bi bi-geo-alt-fill"></i> Mumbai, Maharashtra
+                            </div>
+                            <p class="hospital-card-description">A premier multi-specialty tertiary care hospital known for its excellence in patient care and medical expertise.</p>
+                            <ul class="hospital-card-features">
+                                <li>Tertiary Care</li>
+                                <li>Robotic Surgery</li>
+                                <li>International Patients</li>
+                            </ul>
+                            <a href="#" class="hospital-card-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Max Hospital -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="hospital-card">
+                        <div class="hospital-card-img-container">
+                            <img src="~/images/max.jpg" class="hospital-card-img" alt="Max Hospital">
+                            <div class="hospital-card-overlay"></div>
+                            <div class="hospital-card-rating">
+                                <i class="bi bi-star-fill"></i> 4.9
+                            </div>
+                        </div>
+                        <div class="hospital-card-content">
+                            <h3 class="hospital-card-title">Max Super Speciality Hospital</h3>
+                            <div class="hospital-card-location">
+                                <i class="bi bi-geo-alt-fill"></i> Delhi NCR
+                            </div>
+                            <p class="hospital-card-description">A leading healthcare provider offering world-class medical services with a focus on patient-centric care.</p>
+                            <ul class="hospital-card-features">
+                                <li>Super Speciality</li>
+                                <li>Cancer Care</li>
+                                <li>Cardiac Sciences</li>
+                            </ul>
+                            <a href="#" class="hospital-card-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sai Hospital -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="hospital-card">
+                        <div class="hospital-card-img-container">
+                            <img src="~/images/sai.jpeg" class="hospital-card-img" alt="Sai Hospital">
+                            <div class="hospital-card-overlay"></div>
+                            <div class="hospital-card-rating">
+                                <i class="bi bi-star-fill"></i> 4.5
+                            </div>
+                        </div>
+                        <div class="hospital-card-content">
+                            <h3 class="hospital-card-title">Sai Hospital</h3>
+                            <div class="hospital-card-location">
+                                <i class="bi bi-geo-alt-fill"></i> Pune, Maharashtra
+                            </div>
+                            <p class="hospital-card-description">A comprehensive healthcare facility providing quality medical services with compassionate care.</p>
+                            <ul class="hospital-card-features">
+                                <li>Family Care</li>
+                                <li>Maternity</li>
+                                <li>Pediatrics</li>
+                            </ul>
+                            <a href="#" class="hospital-card-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Hospital Card (for balance) -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="hospital-card">
+                        <div class="hospital-card-img-container">
+                            <img src="~/images/max.jpg" class="hospital-card-img" alt="Apollo Hospital">
+                            <div class="hospital-card-overlay"></div>
+                            <div class="hospital-card-rating">
+                                <i class="bi bi-star-fill"></i> 4.8
+                            </div>
+                        </div>
+                        <div class="hospital-card-content">
+                            <h3 class="hospital-card-title">Apollo Hospital</h3>
+                            <div class="hospital-card-location">
+                                <i class="bi bi-geo-alt-fill"></i> Chennai, Tamil Nadu
+                            </div>
+                            <p class="hospital-card-description">A pioneer in private healthcare with world-class facilities and cutting-edge technology.</p>
+                            <ul class="hospital-card-features">
+                                <li>Organ Transplant</li>
+                                <li>Robotic Surgery</li>
+                                <li>Preventive Healthcare</li>
+                            </ul>
+                            <a href="#" class="hospital-card-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>

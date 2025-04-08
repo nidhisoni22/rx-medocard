@@ -163,14 +163,14 @@
 /* Hero Section Styles */
 .modern-hero {
   background-color: #ffffff;
-  min-height: 100vh;
+  min-height: 90vh; /* Reduced from 100vh to 90vh */
   display: flex;
   align-items: center;
   position: relative;
   overflow: visible;
   padding: 0;
-  margin-top: 0;
-  padding-top: 80px; /* Add padding to account for fixed navbar */
+  margin-top: -30px; /* Negative margin to shift upwards */
+  padding-top: 60px; /* Reduced padding */
 }
 
 .modern-hero .container {
@@ -180,7 +180,7 @@
 
 .modern-hero-content {
   max-width: 540px;
-  
+
 }
 
 .hero-benefits {

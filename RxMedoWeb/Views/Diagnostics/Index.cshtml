@@ -3,115 +3,428 @@
     ViewData["Title"] = "Diagnostics";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Diagnostics</h1>
-    <p>Book discounted diagnostic tests for you and your family.</p>
-</div>
 
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        @TempData["SuccessMessage"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-}
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Book a Diagnostic Test</h2>
-            <p>Heavily Discounted High-Quality Health Screenings for you & your family members.</p>
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Available Diagnostic Tests</h5>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Test Name</th>
-                                    <th>Original Price</th>
-                                    <th>Discounted Price</th>
-                                    <th>Discount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var test in Model)
-                                {
-                                    <tr>
-                                        <td>@test.Name</td>
-                                        <td>₹@test.OriginalPrice</td>
-                                        <td>₹@test.DiscountedPrice</td>
-                                        <td>@test.DiscountPercentage%</td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
+<section class="diagnostics-page">
+    <!-- Hero Section -->
+    <section class="diagnostics-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Advanced Diagnostic Services</h1>
+                        <p class="hero-subtitle">Access premium diagnostic tests with exclusive discounts for RX MEDO CARD members. Our network includes state-of-the-art diagnostic centers across India.</p>
+
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <div class="hero-stat-number" data-count="21" data-suffix="M+">0</div>
+                                <div class="hero-stat-text">Tests Conducted Annually</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-number" data-count="3000" data-suffix="+">0</div>
+                                <div class="hero-stat-text">Collection Centers</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-number" data-count="120" data-suffix="+">0</div>
+                                <div class="hero-stat-text">Processing Labs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image-container">
+                        <img src="~/images/diagnostic.png" class="hero-image" alt="Diagnostic Services">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Book a Test</h5>
-                    <form asp-controller="Diagnostics" asp-action="BookTest" method="post" class="needs-validation booking-form" novalidate>
-                        <div class="mb-3">
-                            <label for="PatientName" class="form-label">Patient Name</label>
-                            <input type="text" class="form-control" id="PatientName" name="PatientName" required>
-                            <div class="invalid-feedback">
-                                Please provide patient name.
+    </section>
+
+    <!-- Diagnostic Tests Section -->
+    <section class="diagnostic-tests-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Diagnostic Tests</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Explore our comprehensive range of diagnostic tests available at discounted rates for RX MEDO CARD members</p>
+            </div>
+
+            <div class="diagnostic-tests-container">
+                <div class="row">
+                    <!-- Biopsy -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="~/images/biopsy.png" class="diagnostic-card-icon" alt="Biopsy">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">Biopsy</h3>
+                                <p class="diagnostic-card-description">A biopsy helps your doctor diagnose a medical condition. Find out more about what they are, different types of biopsies.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="PatientAge" class="form-label">Patient Age</label>
-                            <input type="number" class="form-control" id="PatientAge" name="PatientAge" min="1" max="120" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid age (1-120).
+                    </div>
+
+                    <!-- Colonoscopy -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="https://img.icons8.com/color/96/000000/large-intestine.png" class="diagnostic-card-icon" alt="Colonoscopy">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">Colonoscopy</h3>
+                                <p class="diagnostic-card-description">During a colonoscopy, a tube is inserted into the anus to view the inside of the large bowel to help diagnose or treat some medical conditions.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="PatientGender" class="form-label">Patient Gender</label>
-                            <select class="form-select" id="PatientGender" name="PatientGender" required>
-                                <option selected disabled value="">Choose...</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select gender.
+                    </div>
+
+                    <!-- CT Scan -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="~/images/CT-Scan.png" class="diagnostic-card-icon" alt="CT Scan">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">CT Scan</h3>
+                                <p class="diagnostic-card-description">A Computed tomography (CT) Scan is a 3D image of your body. It's generated by a machine that moves around you. Learn more about CT Scan here.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="TestType" class="form-label">Test Type</label>
-                            <select class="form-select" id="TestType" name="TestType" required>
-                                <option selected disabled value="">Choose...</option>
-                                @foreach (var test in Model)
-                                {
-                                    <option value="@test.Name">@test.Name - ₹@test.DiscountedPrice</option>
-                                }
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a test type.
+                    </div>
+
+                    <!-- ECG -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="~/images/ecg.png" class="diagnostic-card-icon" alt="ECG">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">Electrocardiogram</h3>
+                                <p class="diagnostic-card-description">To find out how well your heart is working, your doctor may ask you to have an electrocardiogram (ECG). Learn more about it and why you may need an ECG.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="PreferredDate" class="form-label">Preferred Date</label>
-                            <input type="date" class="form-control" id="PreferredDate" name="PreferredDate" min="@DateTime.Now.ToString("yyyy-MM-dd")" required>
-                            <div class="invalid-feedback">
-                                Please select a valid date.
+                    </div>
+
+                    <!-- EEG -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="https://img.icons8.com/color/96/000000/brain.png" class="diagnostic-card-icon" alt="EEG">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">Electroencephalogram</h3>
+                                <p class="diagnostic-card-description">An electroencephalogram, or EEG, measures brain activity to diagnose or monitor conditions such as epilepsy. Learn more about this diagnostic test.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="ContactNumber" class="form-label">Contact Number</label>
-                            <input type="tel" class="form-control" id="ContactNumber" name="ContactNumber" required>
-                            <div class="invalid-feedback">
-                                Please provide a contact number.
+                    </div>
+
+                    <!-- Gastroscopy -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="https://img.icons8.com/color/96/000000/stomach.png" class="diagnostic-card-icon" alt="Gastroscopy">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">Gastroscopy</h3>
+                                <p class="diagnostic-card-description">A gastroscopy is a procedure to look inside your oesophagus (food pipe) and stomach. Find out what happens during a gastroscopy and when it is done.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Book Now</button>
-                    </form>
+                    </div>
+
+                    <!-- Eye Tests -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="https://img.icons8.com/color/96/000000/visible.png" class="diagnostic-card-icon" alt="Eye Tests">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">Eye Tests</h3>
+                                <p class="diagnostic-card-description">Regular eye tests can pick up problems before you have symptoms. You don't need a referral to see an optometrist.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hearing Test -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="https://img.icons8.com/color/96/000000/hearing.png" class="diagnostic-card-icon" alt="Hearing Test">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">Hearing Test</h3>
+                                <p class="diagnostic-card-description">Hearing tests can detect and measure the severity of hearing loss and what types of hearing tests can be done.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MRI Test -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="~/images/mri.png" class="diagnostic-card-icon" alt="MRI Test">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">MRI Test</h3>
+                                <p class="diagnostic-card-description">An MRI scan uses magnets, radio waves, and a computer to create images of your body's soft tissues. Read about benefits, process, and potential complications.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PET Scan -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="~/images/mri.png" class="diagnostic-card-icon" alt="PET Scan">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">PET Scan</h3>
+                                <p class="diagnostic-card-description">A positron emission tomography (PET) scan is an imaging test used to diagnose certain diseases. Find out what the scan involves and how it works.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ultrasound -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="~/images/pet.png" class="diagnostic-card-icon" alt="Ultrasound">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">Ultrasound</h3>
+                                <p class="diagnostic-card-description">An ultrasound scan creates a real-time picture of the inside of the body using sound waves. Learn about uses, types, and preparation for ultrasound.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- X-rays -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="diagnostic-card">
+                            <img src="~/images/xray.png" class="diagnostic-card-icon" alt="X-rays">
+                            <div class="diagnostic-card-content">
+                                <h3 class="diagnostic-card-title">X-rays</h3>
+                                <p class="diagnostic-card-description">An X-ray uses radiation to create a picture of the inside of your body. The X-ray beam is absorbed differently by body structures to create the images.</p>
+                                <a href="#booking-section" class="diagnostic-card-btn">Book Now <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking-section" class="booking-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="booking-form-container">
+                        <div class="booking-form-header">
+                            <h2 class="booking-form-title">Book a Diagnostic Test</h2>
+                            <p class="booking-form-subtitle">Heavily Discounted High-Quality Health Screenings for you & your family members</p>
+                        </div>
+                        <div class="booking-form-content no-scroll">
+                            <div id="bookingAlerts"></div>
+                            <form action="/Diagnostics/BookTest" method="post" class="needs-validation booking-form no-scroll" id="diagnosticForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="PatientName" class="form-label">Patient Name</label>
+                                    <input type="text" class="form-control" id="PatientName" name="PatientName" required>
+                                    <div class="invalid-feedback">
+                                        Please provide patient name.
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="PatientAge" class="form-label">Patient Age</label>
+                                        <input type="number" class="form-control" id="PatientAge" name="PatientAge" min="1" max="120" required>
+                                        <div class="invalid-feedback">
+                                            Please provide a valid age (1-120).
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="PatientGender" class="form-label">Patient Gender</label>
+                                        <select class="form-select" id="PatientGender" name="PatientGender" required>
+                                            <option selected disabled value="">Choose...</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Please select gender.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="TestType" class="form-label">Test Type</label>
+                                    <select class="form-select" id="TestType" name="TestType" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        @foreach (var test in Model)
+                                        {
+                                            <option value="@test.Name">@test.Name</option>
+                                        }
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a test type.
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="PreferredDate" class="form-label">Preferred Date</label>
+                                        <input type="date" class="form-control" id="PreferredDate" name="PreferredDate" min="@DateTime.Now.ToString("yyyy-MM-dd")" required>
+                                        <div class="invalid-feedback">
+                                            Please select a valid date.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="ContactNumber" class="form-label">Contact Number</label>
+                                        <input type="tel" class="form-control" id="ContactNumber" name="ContactNumber" required>
+                                        <div class="invalid-feedback">
+                                            Please provide a contact number.
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="IsConfirmed" value="false" />
+                                <input type="hidden" name="BookingDate" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")" />
+                                <div class="text-center">
+                                    <button type="submit" class="btn-book-now" id="bookNowBtn">Book Now <i class="bi bi-arrow-right"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+@section Scripts {
+    <script>
+        // Function to prevent scrolling
+        function preventScroll() {
+            // Save current scroll position
+            const scrollX = window.scrollX;
+            const scrollY = window.scrollY;
+
+            // Force the window to maintain the current scroll position
+            window.scrollTo(scrollX, scrollY);
+
+            // Add event listener to prevent scroll for a short time
+            const preventScrollHandler = () => {
+                window.scrollTo(scrollX, scrollY);
+            };
+
+            window.addEventListener('scroll', preventScrollHandler);
+
+            // Remove the event listener after a short delay
+            setTimeout(() => {
+                window.removeEventListener('scroll', preventScrollHandler);
+            }, 300);
+        }
+
+        // Function to reset form to initial state
+        function resetForm(form) {
+            // Clear all form fields
+            form.reset();
+            form.classList.remove('was-validated');
+
+            // Ensure all fields are cleared
+            document.getElementById('PatientName').value = '';
+            document.getElementById('PatientAge').value = '';
+            document.getElementById('PatientGender').selectedIndex = 0;
+            document.getElementById('TestType').selectedIndex = 0;
+            document.getElementById('PreferredDate').value = '';
+            document.getElementById('ContactNumber').value = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form validation
+            const form = document.getElementById('diagnosticForm');
+
+            if (form) {
+                // Set default values
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('PreferredDate').setAttribute('min', today);
+
+                // Handle form submission
+                form.addEventListener('submit', function(event) {
+                    // Always prevent default form submission and scrolling
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    // Prevent page scrolling
+                    preventScroll();
+
+                    // Validate the form
+                    if (!form.checkValidity()) {
+                        form.classList.add('was-validated');
+                        return false;
+                    }
+
+                    // Log form data
+                    console.log('Form is valid and being submitted via fetch');
+                    const formData = new FormData(form);
+                    for (let pair of formData.entries()) {
+                        console.log(pair[0] + ': ' + pair[1]);
+                    }
+
+                    // Disable the submit button to prevent double submission
+                    document.getElementById('bookNowBtn').disabled = true;
+                    document.getElementById('bookNowBtn').innerHTML = 'Booking... <i class="bi bi-hourglass-split"></i>';
+
+                    // Submit the form using fetch API (same as test button)
+                    fetch('/Diagnostics/BookTest', {
+                        method: 'POST',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json'
+                        },
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error('Network response was not ok');
+                        }
+                    })
+                    .then(data => {
+                        console.log('Response data:', data);
+                        if (data.success) {
+                            console.log('Booking submitted successfully with ID:', data.bookingId);
+
+                            // Clear any existing alerts
+                            const alertsContainer = document.getElementById('bookingAlerts');
+                            alertsContainer.innerHTML = '';
+
+                            // Reset the form using our helper function without scrolling
+                            resetForm(form);
+
+                            // Prevent any automatic scrolling
+                            preventScroll();
+
+                            // Re-enable the submit button
+                            document.getElementById('bookNowBtn').disabled = false;
+                            document.getElementById('bookNowBtn').innerHTML = 'Book Now <i class="bi bi-arrow-right"></i>';
+                        } else {
+                            console.error('Error from server:', data.message);
+
+                            // Clear any existing alerts
+                            const alertsContainer = document.getElementById('bookingAlerts');
+                            alertsContainer.innerHTML = '';
+
+                            // Prevent any automatic scrolling
+                            preventScroll();
+
+                            // Re-enable the submit button
+                            document.getElementById('bookNowBtn').disabled = false;
+                            document.getElementById('bookNowBtn').innerHTML = 'Book Now <i class="bi bi-arrow-right"></i>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+
+                        // Clear any existing alerts
+                        const alertsContainer = document.getElementById('bookingAlerts');
+                        alertsContainer.innerHTML = '';
+
+                        // Prevent any automatic scrolling
+                        preventScroll();
+
+                        // Re-enable the submit button
+                        document.getElementById('bookNowBtn').disabled = false;
+                        document.getElementById('bookNowBtn').innerHTML = 'Book Now <i class="bi bi-arrow-right"></i>';
+                    });
+                });
+
+                // No test button needed anymore since the main button is working
+            }
+        });
+    </script>
+}
