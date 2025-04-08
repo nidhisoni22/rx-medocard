@@ -16,7 +16,7 @@ The website is built using ASP.NET Core MVC and consists of the following main p
 
 | Page | Description |
 |------|-------------|
-| **Home** | Landing page showcasing the main features and benefits |
+| **Home** | Landing page showcasing the main features and benefits |-
 | **Offers** | Displays membership plans and healthcare service offers |
 | **Hospitals** | Lists partner hospitals and healthcare facilities |
 | **OPD** | Information about outpatient department services |
