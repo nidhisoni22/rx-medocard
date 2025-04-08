@@ -46,41 +46,35 @@
             </button>
 
             <div class="nav-links" id="navLinks">
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")"
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")"
                     asp-area="" asp-controller="Home" asp-action="Index">
                     <span class="nav-icon"><i class="bi bi-house-door"></i></span>
                     <span class="nav-text">Home</span>
                 </a>
-                </a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Offers" ? "active" : "")"
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Offers" ? "active" : "")"
                     asp-area="" asp-controller="Offers" asp-action="Index">
                     <span class="nav-icon"><i class="bi bi-tag"></i></span>
                     <span class="nav-text">Offers</span>
                 </a>
-                </a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Hospitals" ? "active" : "")"
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Hospitals" ? "active" : "")"
                     asp-area="" asp-controller="Hospitals" asp-action="Index">
                     <span class="nav-icon"><i class="bi bi-hospital"></i></span>
                     <span class="nav-text">Hospitals</span>
                 </a>
-                </a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "OPD" ? "active" : "")"
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "OPD" ? "active" : "")"
                     asp-area="" asp-controller="OPD" asp-action="Index">
                     <span class="nav-icon"><i class="bi bi-clipboard2-pulse"></i></span>
                     <span class="nav-text">OPD</span>
                 </a>
-                </a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Pharmacy" ? "active" : "")"
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Pharmacy" ? "active" : "")"
                     asp-area="" asp-controller="Pharmacy" asp-action="Index">
                     <span class="nav-icon"><i class="bi bi-capsule"></i></span>
                     <span class="nav-text">Pharmacy</span>
                 </a>
-                </a>
-                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Diagnostics" ? "active" : "")"
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Diagnostics" ? "active" : "")"
                     asp-area="" asp-controller="Diagnostics" asp-action="Index">
                     <span class="nav-icon"><i class="bi bi-heart-pulse"></i></span>
                     <span class="nav-text">Diagnostics</span>
-                </a>
                 </a>
                 <a class="sign-up-btn" asp-area="" asp-controller="Membership" asp-action="Index">Get Started</a>
             </div>
