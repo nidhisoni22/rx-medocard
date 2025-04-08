@@ -316,6 +316,8 @@
   margin-bottom: 1rem;
   position: relative;
   padding-bottom: 10px;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .diagnostic-card-title::after {
