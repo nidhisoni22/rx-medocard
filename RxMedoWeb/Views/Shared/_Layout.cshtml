@@ -49,6 +49,7 @@
     <link rel="stylesheet" href="~/css/navbar-special-fix.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/get-started-btn.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/RxMedoWeb.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
     <!-- All navbar styles are now in navbar-unified.css -->
 </head>
@@ -221,6 +222,15 @@
     <script src="~/js/navbar-active.js" asp-append-version="true"></script>
     <script src="~/js/navbar-fix.js" asp-append-version="true"></script>
     <script src="~/js/toggle-button-fix.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
