@@ -27,13 +27,105 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Fix for navbar toggler
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    if (navbarToggler) {
-        navbarToggler.addEventListener('click', function() {
-            this.classList.toggle('collapsed');
-        });
+    // Global unified navbar toggler functionality for all pages
+    function setupNavbarToggler() {
+        console.log('Setting up navbar toggler');
+        // Get the navbar elements
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+
+        if (navbarToggler && navbarCollapse) {
+            console.log('Found navbar elements');
+            // Remove any existing event listeners by cloning and replacing
+            const newToggler = navbarToggler.cloneNode(true);
+            navbarToggler.parentNode.replaceChild(newToggler, navbarToggler);
+
+            // Force the toggle button to be visible on mobile
+            if (window.innerWidth <= 1100) {
+                newToggler.style.display = 'block';
+                newToggler.style.visibility = 'visible';
+                newToggler.style.opacity = '1';
+                newToggler.style.position = 'absolute';
+                newToggler.style.right = '15px';
+                newToggler.style.top = '50%';
+                newToggler.style.transform = 'translateY(-50%)';
+                newToggler.style.zIndex = '1050';
+                newToggler.style.backgroundColor = 'rgba(239, 71, 111, 0.3)';
+                newToggler.style.padding = '0.7rem';
+                newToggler.style.borderRadius = '8px';
+                newToggler.style.cursor = 'pointer';
+            }
+
+            // Add new event listener with proper event handling
+            newToggler.addEventListener('click', function(e) {
+                console.log('Toggle button clicked');
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Toggle the collapsed class
+                if (this.classList.contains('collapsed')) {
+                    this.classList.remove('collapsed');
+                } else {
+                    this.classList.add('collapsed');
+                }
+
+                // Toggle the show class on navbar-collapse
+                navbarCollapse.classList.toggle('show');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (navbarCollapse.classList.contains('show') &&
+                    !navbarCollapse.contains(event.target) &&
+                    !newToggler.contains(event.target)) {
+                    newToggler.classList.add('collapsed');
+                    navbarCollapse.classList.remove('show');
+                }
+            });
+        } else {
+            console.log('Navbar elements not found');
+        }
     }
+
+    // Initialize the navbar toggler
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM content loaded');
+        setupNavbarToggler();
+    });
+
+    // Re-initialize on window resize to ensure it works correctly
+    window.addEventListener('resize', function() {
+        console.log('Window resized');
+        setupNavbarToggler();
+    });
+
+    // Re-initialize when page visibility changes (helps with page transitions)
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            console.log('Page visibility changed');
+            setupNavbarToggler();
+        }
+    });
+
+    // Prevent navigation links from closing the menu when clicked
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Only prevent default for anchor links (links that start with #)
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href;
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            // Don't close the menu for page navigation links
+            // The menu will stay open when navigating to a new page
+        });
+    });
     // Initialize Bootstrap tooltips
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

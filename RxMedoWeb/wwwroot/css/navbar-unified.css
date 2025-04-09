@@ -1,0 +1,704 @@
+/* Unified Navbar Styles for RX MEDO CARD
+   This file combines all navbar-related styles into a single file
+   for better maintainability and performance.
+*/
+
+/* ===== HEADER CONTAINER ===== */
+.header-modern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Add padding to body to account for fixed navbar */
+body {
+  padding-top: 70px;
+}
+
+/* ===== NAVBAR BASE STYLES ===== */
+.navbar-modern {
+  padding: 0.6rem 0;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== NAVBAR SCROLL EFFECT ===== */
+.header-scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled {
+  padding: 0.5rem 0;
+}
+
+/* ===== BRAND AND LOGO ===== */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  padding: 0;
+}
+
+.logo-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.logo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #001d4f;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.logo-subtitle {
+  font-size: 0.65rem;
+  color: #666;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ===== NAVIGATION CONTAINER ===== */
+.navbar-collapse {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* ===== NAVIGATION LINKS ===== */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  margin: 0 0.1rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #333 !important;
+  padding: 0.4rem 0.6rem !important;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #ef476f !important;
+  background-color: rgba(239, 71, 111, 0.05);
+  transform: translateY(-2px);
+}
+
+.nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+  color: #ef476f;
+}
+
+/* ===== ACTIVE NAV ITEM ===== */
+.nav-item.active .nav-link {
+  color: #001d4f !important;
+  background-color: rgba(0, 29, 79, 0.05);
+  font-weight: 600;
+}
+
+.nav-item.active .nav-icon {
+  color: #ef476f;
+}
+
+/* ===== GET STARTED BUTTON ===== */
+.get-started-btn {
+  background: linear-gradient(to right, #ef476f, #f78c6b) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 0.4rem 1rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 10px rgba(239, 71, 111, 0.2) !important;
+  margin-left: 0.25rem !important;
+  font-size: 0.85rem !important;
+}
+
+.get-started-btn:hover {
+  background: linear-gradient(to right, #f78c6b, #ef476f) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 20px rgba(239, 71, 111, 0.3) !important;
+}
+
+/* ===== HAMBURGER MENU STYLING ===== */
+.navbar-toggler,
+button.navbar-toggler,
+.navbar .navbar-toggler,
+.navbar-expand-custom .navbar-toggler {
+  border: none !important;
+  padding: 0.7rem !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  background-color: rgba(239, 71, 111, 0.3) !important;
+  margin-left: auto !important;
+  position: absolute !important;
+  right: 15px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 1050 !important;
+  cursor: pointer !important;
+  width: auto !important;
+  height: auto !important;
+  pointer-events: auto !important;
+  overflow: visible !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.hamburger-icon {
+  width: 30px;
+  height: 22px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-icon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ef476f;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler.collapsed .hamburger-icon span:nth-child(1) {
+  transform: rotate(0) translateY(0);
+}
+
+.navbar-toggler.collapsed .hamburger-icon span:nth-child(2) {
+  opacity: 1;
+}
+
+.navbar-toggler.collapsed .hamburger-icon span:nth-child(3) {
+  transform: rotate(0) translateY(0);
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-icon span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-icon span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ===== CUSTOM BREAKPOINT FOR NAVBAR ===== */
+.navbar-expand-custom {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+/* Ensure toggle button is visible at the right breakpoint */
+@media (max-width: 1100px) {
+  /* Global alignment fixes for all pages */
+  .header-modern,
+  .navbar,
+  .navbar-brand,
+  .logo-with-icon,
+  .logo-icon,
+  .logo-image,
+  .container,
+  .container-fluid,
+  .row,
+  [class*="col-"] {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  /* Fix for hero sections in all pages */
+  .offers-hero,
+  .pharmacy-hero {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure toggle button is ALWAYS visible and properly styled at mobile breakpoints */
+  .navbar-toggler,
+  button.navbar-toggler,
+  .navbar .navbar-toggler,
+  .navbar-expand-custom .navbar-toggler {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    right: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 1050 !important;
+    background-color: rgba(239, 71, 111, 0.3) !important;
+    padding: 0.7rem !important;
+    border-radius: 8px !important;
+    margin-left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure navbar collapse is properly styled */
+  .navbar-collapse {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background-color: white !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    padding: 1rem !important;
+    z-index: 1049 !important;
+  }
+
+  /* Show navbar collapse when expanded */
+  .navbar-collapse.show {
+    display: block !important;
+  }
+
+  /* Ensure hamburger icon is visible */
+  .hamburger-icon {
+    width: 30px !important;
+    height: 22px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .hamburger-icon span {
+    display: block !important;
+    width: 100% !important;
+    height: 3px !important;
+    background-color: #ef476f !important;
+    border-radius: 3px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Ensure proper animation for hamburger icon */
+  .navbar-toggler.collapsed .hamburger-icon span:nth-child(1) {
+    transform: rotate(0) translateY(0) !important;
+  }
+
+  .navbar-toggler.collapsed .hamburger-icon span:nth-child(2) {
+    opacity: 1 !important;
+  }
+
+  .navbar-toggler.collapsed .hamburger-icon span:nth-child(3) {
+    transform: rotate(0) translateY(0) !important;
+  }
+
+  .navbar-toggler:not(.collapsed) .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px) !important;
+  }
+
+  .navbar-toggler:not(.collapsed) .hamburger-icon span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .navbar-toggler:not(.collapsed) .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px) !important;
+  }
+}
+
+@media (min-width: 1101px) {
+  /* Desktop navbar layout */
+  .navbar-expand-custom {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .navbar-expand-custom .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-expand-custom .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .navbar-expand-custom .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .navbar-expand-custom .navbar-collapse {
+    display: flex !important;
+  }
+
+  /* Hide toggle button on larger screens */
+  .navbar-expand-custom .navbar-toggler,
+  .navbar-toggler,
+  button.navbar-toggler,
+  .navbar .navbar-toggler {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    pointer-events: none !important;
+    clip: rect(0, 0, 0, 0) !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  /* Ensure navbar collapse is visible on desktop */
+  .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto !important;
+  }
+}
+
+/* ===== ANIMATION DELAY CLASSES ===== */
+.animation-delay-200 {
+  animation-delay: 0.2s !important;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s !important;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s !important;
+}
+
+/* ===== HERO SECTION STYLES ===== */
+.offers-hero,
+.pharmacy-hero {
+  margin-top: 0 !important;
+  padding-top: 100px !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+/* ===== ANIMATION DELAY CLASSES ===== */
+.animation-delay-200 {
+  animation-delay: 0.2s !important;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s !important;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s !important;
+}
+
+/* ===== HERO SECTION STYLES ===== */
+.offers-hero,
+.pharmacy-hero {
+  margin-top: 0 !important;
+  padding-top: 100px !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+@media (max-width: 1100px) {
+  /* Body padding adjustment */
+  body {
+    padding-top: 30px;
+  }
+
+  /* Navbar container */
+  .header-modern {
+    background: rgba(255, 255, 255, 0.98);
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  /* Remove left padding from container */
+  .navbar-modern .container,
+  .container,
+  .container-fluid,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .navbar > .container,
+  .navbar > .container-fluid,
+  div[class^="container"],
+  div[class*=" container"] {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    padding-right: 15px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Adjust navbar to align with left edge */
+  .navbar {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Adjust navbar brand to align with left edge */
+  .navbar-brand {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  /* Logo adjustments */
+  .logo-with-icon {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .logo-icon {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.6rem;
+  }
+
+  .logo-image {
+    height: 35px;
+    margin-left: 0 !important;
+  }
+
+  /* Mobile menu */
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    z-index: 1000;
+    border-radius: 8px;
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .navbar-nav {
+    gap: 0;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav-link {
+    padding: 0.8rem 1rem !important;
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 0;
+  }
+
+  .nav-link:hover {
+    transform: none;
+  }
+
+  .nav-item:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .get-started-btn {
+    margin: 0.5rem 0 !important;
+    width: 100%;
+    justify-content: center !important;
+    border-radius: 8px !important;
+  }
+
+  /* Override Bootstrap grid padding */
+  .row {
+    margin-left: 0 !important;
+  }
+
+  [class*="col-"] {
+    padding-left: 0 !important;
+  }
+}
+
+/* ===== TABLET DEVICES ===== */
+@media (min-width: 1101px) and (max-width: 1200px) {
+  .nav-link {
+    padding: 0.4rem 0.4rem !important;
+    font-size: 0.8rem;
+    max-width: max-content;
+  }
+
+  .nav-icon {
+    font-size: 0.9rem;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.6rem;
+  }
+
+  .logo-image {
+    height: 35px;
+  }
+
+  .navbar-nav {
+    gap: 0.1rem;
+  }
+
+  .nav-item {
+    margin: 0;
+  }
+
+  .get-started-btn {
+    padding: 0.3rem 0.8rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ===== EXTRA SMALL DEVICES ===== */
+@media (max-width: 575px) {
+  .logo-text-wrapper {
+    display: none;
+  }
+
+  .logo-image {
+    height: 40px;
+    margin-left: 0 !important;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .navbar-modern .container {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    padding-right: 15px !important;
+  }
+
+  .logo-with-icon {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .navbar-collapse {
+    margin-top: 0;
+  }
+
+  /* Target Bootstrap container */
+  .container,
+  .container-fluid,
+  .container-sm,
+  div[class^="container"],
+  div[class*=" container"] {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Target navbar specifically */
+  .navbar {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Target navbar container */
+  .navbar > .container,
+  .navbar > .container-fluid {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  /* Target logo icon */
+  .logo-icon {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  /* Force zero padding on all elements */
+  .header-modern *,
+  .navbar *,
+  .navbar-brand *,
+  .logo-with-icon * {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+}

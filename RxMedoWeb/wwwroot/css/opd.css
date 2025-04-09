@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-image-container {
     position: relative;
-    
+
     max-width: 100%;
     margin: 0 auto;
     display: flex;
@@ -372,6 +372,19 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.1rem;
         max-width: 100%;
     }
+
+    .service-title {
+        font-size: 1.3rem;
+    }
+
+    .step-title {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -380,41 +393,107 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-title {
-        font-size: 2.2rem;
-        text-align: left;
+        font-size: 2rem;
+        text-align: center;
+        line-height: 1.3;
     }
 
     .hero-subtitle {
         font-size: 1rem;
-        text-align: left;
+        text-align: center;
         max-width: 100%;
-        margin-left: 0;
+        margin-left: auto;
         margin-right: auto;
     }
 
     .hero-image-container {
-        margin-top: 2rem;
+        margin: 2rem auto 0;
         max-width: 80%;
+        height: auto;
     }
 
-    .opd-hero .row {
-        flex-direction: column;
+    .hero-image {
+        max-height: 300px;
+    }
+
+    .opd-hero .btn {
+        margin: 0.5rem 0.25rem;
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        display: inline-block;
+    }
+
+    .opd-hero .mt-4 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
     .section-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .section-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .about-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .about-subtitle {
         font-size: 1.3rem;
+    }
+
+    .service-card, .step-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+    }
+
+    .step-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .opd-hero .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .opd-hero .mt-4 {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .service-title, .step-title {
+        font-size: 1.3rem;
+    }
+
+    .service-card .btn, .about-content .btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .department-item {
+        padding: 0.75rem;
+        font-size: 0.9rem;
     }
 }
 

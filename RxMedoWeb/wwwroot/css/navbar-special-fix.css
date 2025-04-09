@@ -1,0 +1,76 @@
+/* Special fixes for navbar toggle button on Offers page */
+
+/* Force toggle button to be visible on mobile */
+@media (max-width: 1100px) {
+  /* Target all toggle buttons with maximum specificity */
+  .navbar-toggler,
+  button.navbar-toggler,
+  .navbar .navbar-toggler,
+  .navbar-expand-custom .navbar-toggler,
+  header .navbar-toggler,
+  .header-modern .navbar-toggler,
+  .navbar-modern .navbar-toggler,
+  nav .navbar-toggler,
+  .container .navbar-toggler,
+  body .navbar-toggler {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    right: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 1050 !important;
+    background-color: rgba(239, 71, 111, 0.3) !important;
+    padding: 0.7rem !important;
+    border-radius: 8px !important;
+    margin-left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure hamburger icon is visible */
+  .hamburger-icon,
+  .navbar-toggler .hamburger-icon,
+  button.navbar-toggler .hamburger-icon {
+    width: 30px !important;
+    height: 22px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .hamburger-icon span,
+  .navbar-toggler .hamburger-icon span,
+  button.navbar-toggler .hamburger-icon span {
+    display: block !important;
+    width: 100% !important;
+    height: 3px !important;
+    background-color: #ef476f !important;
+    border-radius: 3px !important;
+    transition: all 0.3s ease !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Hide toggle button on desktop */
+@media (min-width: 1101px) {
+  .navbar-toggler,
+  button.navbar-toggler,
+  .navbar .navbar-toggler,
+  .navbar-expand-custom .navbar-toggler {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}

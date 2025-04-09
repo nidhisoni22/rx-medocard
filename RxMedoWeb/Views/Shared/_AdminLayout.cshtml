@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/RxMedoWeb.styles.css" asp-append-version="true" />
-    
+
     <style>
         :root {
             --primary-color: #1A237E;
@@ -24,19 +24,20 @@
             --warning-color: #FFC107;
             --danger-color: #F44336;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
             color: var(--text-color);
         }
-        
+
         /* Admin Layout Styles */
         .admin-container {
             display: flex;
             min-height: 100vh;
+            position: relative;
         }
-        
+
         .admin-sidebar {
             width: 280px;
             background: linear-gradient(135deg, #1A237E, #303F9F);
@@ -48,43 +49,76 @@
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
-        
+
+        .sidebar-toggle {
+            display: none; /* Hide by default, only show on mobile */
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1001;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-toggle:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-toggle i {
+            font-size: 1.5rem;
+        }
+
+        .sidebar-collapsed {
+            transform: translateX(-100%);
+        }
+
         .sidebar-header {
             display: flex;
             align-items: center;
             padding: 1.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .sidebar-logo {
             width: 40px;
             height: 40px;
             margin-right: 10px;
         }
-        
+
         .sidebar-title {
             font-size: 1.2rem;
             font-weight: 700;
             margin: 0;
             line-height: 1.2;
         }
-        
+
         .sidebar-subtitle {
             font-size: 0.8rem;
             opacity: 0.8;
             margin: 0;
         }
-        
+
         .sidebar-menu {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .sidebar-menu li {
             margin: 5px 0;
         }
-        
+
         .sidebar-menu a {
             display: flex;
             align-items: center;
@@ -94,34 +128,40 @@
             transition: all 0.3s ease;
             border-left: 3px solid transparent;
         }
-        
+
         .sidebar-menu a:hover {
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
             border-left-color: var(--secondary-color);
         }
-        
+
         .sidebar-menu a.active {
             background-color: rgba(255, 255, 255, 0.15);
             color: white;
             border-left-color: var(--secondary-color);
             font-weight: 500;
         }
-        
+
         .sidebar-menu i {
             margin-right: 10px;
             font-size: 1.1rem;
             width: 24px;
             text-align: center;
         }
-        
+
         .admin-content {
             flex: 1;
             margin-left: 280px;
             padding: 2rem;
             transition: all 0.3s ease;
+            width: calc(100% - 280px);
         }
-        
+
+        .content-expanded {
+            margin-left: 0;
+            width: 100%;
+        }
+
         .admin-header {
             display: flex;
             justify-content: space-between;
@@ -130,14 +170,14 @@
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border-color);
         }
-        
+
         .admin-title {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin: 0;
+            margin-left: 3rem;
         }
-        
+
         /* Dashboard Cards */
         .dashboard-card {
             background-color: white;
@@ -149,45 +189,45 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .dashboard-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .dashboard-card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
         }
-        
+
         .dashboard-card-title {
             font-size: 1rem;
             font-weight: 600;
             color: var(--text-color);
             margin: 0;
         }
-        
+
         .dashboard-card-icon {
             font-size: 1.5rem;
             color: var(--primary-color);
             opacity: 0.8;
         }
-        
+
         .dashboard-card-value {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
             margin: 0.5rem 0;
         }
-        
+
         .dashboard-card-description {
             font-size: 0.9rem;
             color: #666;
             margin: 0;
         }
-        
+
         /* Admin Tables */
         .admin-table-container {
             background-color: white;
@@ -197,12 +237,12 @@
             margin-bottom: 1.5rem;
             overflow: hidden;
         }
-        
+
         .admin-table {
             width: 100%;
             border-collapse: collapse;
         }
-        
+
         .admin-table th {
             background-color: #f8f9fa;
             color: var(--primary-color);
@@ -211,21 +251,21 @@
             padding: 1rem;
             border-bottom: 2px solid var(--border-color);
         }
-        
+
         .admin-table td {
             padding: 1rem;
             border-bottom: 1px solid var(--border-color);
             vertical-align: middle;
         }
-        
+
         .admin-table tr:last-child td {
             border-bottom: none;
         }
-        
+
         .admin-table tr:hover td {
             background-color: #f8f9fa;
         }
-        
+
         /* Status Badges */
         .status-badge {
             display: inline-block;
@@ -234,22 +274,22 @@
             font-size: 0.8rem;
             font-weight: 500;
         }
-        
+
         .status-confirmed {
             background-color: rgba(76, 175, 80, 0.1);
             color: #2e7d32;
         }
-        
+
         .status-pending {
             background-color: rgba(255, 193, 7, 0.1);
             color: #ff8f00;
         }
-        
+
         .status-cancelled {
             background-color: rgba(244, 67, 54, 0.1);
             color: #d32f2f;
         }
-        
+
         /* Action Buttons */
         .action-btn {
             display: inline-flex;
@@ -264,24 +304,24 @@
             transition: all 0.2s ease;
             cursor: pointer;
         }
-        
+
         .action-btn:hover {
             background-color: #f5f5f5;
             color: var(--primary-color);
         }
-        
+
         .action-btn.view-btn:hover {
             color: var(--primary-color);
         }
-        
+
         .action-btn.edit-btn:hover {
             color: var(--primary-color);
         }
-        
+
         .action-btn.delete-btn:hover {
             color: var(--danger-color);
         }
-        
+
         /* Login Page Styles */
         .login-container {
             display: flex;
@@ -291,7 +331,7 @@
             background: linear-gradient(135deg, #1A237E, #303F9F);
             position: relative;
         }
-        
+
         .login-card {
             width: 400px;
             background-color: white;
@@ -299,7 +339,7 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-        
+
         .login-header {
             background: linear-gradient(135deg, #1A237E, #303F9F);
             color: white;
@@ -308,7 +348,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .login-header::before {
             content: '';
             position: absolute;
@@ -319,7 +359,7 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
         }
-        
+
         .login-header::after {
             content: '';
             position: absolute;
@@ -330,50 +370,50 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
         }
-        
+
         .login-logo {
             width: 60px;
             height: 60px;
             margin-bottom: 1rem;
         }
-        
+
         .login-title {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
-        
+
         .login-subtitle {
             font-size: 0.9rem;
             opacity: 0.8;
         }
-        
+
         .login-form {
             padding: 2rem;
         }
-        
+
         .login-form .form-group {
             margin-bottom: 1.5rem;
         }
-        
+
         .login-form .form-label {
             font-weight: 500;
             color: var(--text-color);
             margin-bottom: 0.5rem;
         }
-        
+
         .login-form .form-control {
             border-radius: 8px;
             padding: 0.75rem 1rem;
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
         }
-        
+
         .login-form .form-control:focus {
             border-color: var(--primary-color);
             box-shadow: 0 0 0 0.2rem rgba(26, 35, 126, 0.1);
         }
-        
+
         .login-form .btn-login {
             background: linear-gradient(135deg, #1A237E, #303F9F);
             color: white;
@@ -386,13 +426,13 @@
             margin-top: 1rem;
             transition: all 0.3s ease;
         }
-        
+
         .login-form .btn-login:hover {
             background: linear-gradient(135deg, #303F9F, #3949AB);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
         }
-        
+
         /* Back to Website Button */
         .back-to-website-btn {
             position: absolute;
@@ -411,18 +451,18 @@
             transition: all 0.3s ease;
             text-decoration: none;
         }
-        
+
         .back-to-website-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             color: var(--primary-color);
         }
-        
+
         .back-to-website-btn i {
             margin-right: 8px;
             font-size: 1rem;
         }
-        
+
         /* Alert Messages */
         .alert {
             border-radius: 8px;
@@ -430,15 +470,126 @@
             margin-bottom: 1.5rem;
             border: none;
         }
-        
+
         .alert-success {
             background-color: rgba(76, 175, 80, 0.1);
             color: #155724;
         }
-        
+
         .alert-danger {
             background-color: rgba(244, 67, 54, 0.1);
             color: #721c24;
+        }
+
+        /* Responsive Media Queries */
+        @@media (max-width: 1199px) {
+            .dashboard-card-value {
+                font-size: 2.2rem;
+            }
+        }
+
+        @@media (max-width: 991px) {
+            .admin-sidebar {
+                width: 240px;
+            }
+
+            .admin-content {
+                margin-left: 240px;
+                width: calc(100% - 240px);
+                padding: 1.5rem;
+            }
+
+            .sidebar-title {
+                font-size: 1.1rem;
+            }
+
+            .sidebar-subtitle {
+                font-size: 0.7rem;
+            }
+
+            .dashboard-card-value {
+                font-size: 2rem;
+            }
+
+            .admin-table th, .admin-table td {
+                padding: 0.75rem;
+            }
+        }
+
+        @@media (max-width: 767px) {
+            .admin-sidebar {
+                transform: translateX(-100%);
+            }
+
+            .admin-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 1.25rem;
+            }
+
+            .sidebar-toggle {
+                display: flex; /* Show toggle button only on mobile */
+                left: 15px;
+                top: 15px;
+            }
+
+            body.sidebar-open .admin-sidebar {
+                transform: translateX(0);
+            }
+
+            .admin-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .dashboard-card {
+                margin-bottom: 1rem;
+            }
+
+            .login-card {
+                width: 90%;
+                max-width: 400px;
+            }
+        }
+
+        @@media (max-width: 575px) {
+            .admin-content {
+                padding: 1rem;
+            }
+
+            .admin-title {
+                font-size: 1.5rem;
+            }
+
+            .dashboard-card {
+                padding: 1.25rem;
+            }
+
+            .dashboard-card-value {
+                font-size: 1.8rem;
+            }
+
+            .admin-table-container {
+                padding: 1rem;
+            }
+
+            .admin-table th, .admin-table td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .status-badge {
+                padding: 0.2rem 0.5rem;
+                font-size: 0.7rem;
+            }
+
+            .back-to-website-btn {
+                top: 10px;
+                left: 10px;
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -446,7 +597,10 @@
     @if (User.Identity?.IsAuthenticated == true)
     {
         <div class="admin-container">
-            <div class="admin-sidebar">
+            <button id="sidebarToggle" class="sidebar-toggle">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="admin-sidebar" id="adminSidebar">
                 <div class="sidebar-header">
                     <img src="~/images/logo.png" alt="RX MEDO CARD Logo" class="sidebar-logo">
                     <div>
@@ -487,7 +641,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="admin-content">
+            <div class="admin-content" id="adminContent">
                 @if (TempData["SuccessMessage"] != null)
                 {
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -495,7 +649,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 }
-                
+
                 @if (TempData["ErrorMessage"] != null)
                 {
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -503,7 +657,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 }
-                
+
                 @RenderBody()
             </div>
         </div>
@@ -521,7 +675,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    
+
     <script>
         // Auto-hide alerts after 5 seconds
         $(document).ready(function() {
@@ -530,9 +684,50 @@
                     $(this).remove(); // Remove from DOM after fade out
                 });
             }, 5000);
+
+            // Sidebar toggle functionality - using direct event binding
+            document.getElementById('sidebarToggle').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('adminSidebar').classList.toggle('sidebar-collapsed');
+                document.getElementById('adminContent').classList.toggle('content-expanded');
+                document.body.classList.toggle('sidebar-open');
+                console.log('Sidebar toggle clicked');
+            });
+
+            // Close sidebar on small screens when clicking a menu item
+            $('.sidebar-menu a').on('click', function() {
+                if (window.innerWidth <= 767) {
+                    $('#adminSidebar').addClass('sidebar-collapsed');
+                    $('#adminContent').addClass('content-expanded');
+                }
+            });
+
+            // Handle window resize
+            $(window).on('resize', function() {
+                if (window.innerWidth > 767) {
+                    // On desktop: show sidebar, hide toggle button
+                    $('#adminSidebar').removeClass('sidebar-collapsed');
+                    $('#adminContent').removeClass('content-expanded');
+                    document.body.classList.remove('sidebar-open');
+                } else {
+                    // On mobile: hide sidebar, show toggle button
+                    $('#adminSidebar').addClass('sidebar-collapsed');
+                    $('#adminContent').addClass('content-expanded');
+                }
+            });
+
+            // Initialize sidebar state based on screen size
+            if (window.innerWidth <= 767) {
+                $('#adminSidebar').addClass('sidebar-collapsed');
+                $('#adminContent').addClass('content-expanded');
+            } else {
+                $('#adminSidebar').removeClass('sidebar-collapsed');
+                $('#adminContent').removeClass('content-expanded');
+                document.body.classList.remove('sidebar-open');
+            }
         });
     </script>
-    
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

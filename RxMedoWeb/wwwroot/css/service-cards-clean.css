@@ -100,11 +100,11 @@
 
 /* Service card for Order Medicines */
 .service-card-clean.order-medicines .service-icon-clean {
-  background-color: #3f51b5;
+  background-color: #f5f5f5;
 }
 
 .service-card-clean.order-medicines .service-icon-clean i {
-  color: white;
+  color: #333;
 }
 
 /* Service card for Diagnostic Tests */
@@ -141,7 +141,7 @@
 
 .service-card-clean.order-medicines .card-title::after {
   background-color: #3f51b5;
-  transform: scaleX(1);
+  transform: scaleX(0.3);
 }
 
 .service-card-clean:hover .card-title::after {
@@ -188,11 +188,11 @@
   .services-section {
     padding: 4rem 0;
   }
-  
+
   .services-heading h2 {
     font-size: 2rem;
   }
-  
+
   .service-card-clean {
     margin-bottom: 20px;
   }
@@ -202,20 +202,20 @@
   .services-section {
     padding: 3rem 0;
   }
-  
+
   .services-heading h2 {
     font-size: 1.8rem;
   }
-  
+
   .service-icon-clean {
     width: 50px;
     height: 50px;
   }
-  
+
   .service-icon-clean i {
     font-size: 1.3rem;
   }
-  
+
   .service-card-clean .card-title {
     font-size: 1.1rem;
   }

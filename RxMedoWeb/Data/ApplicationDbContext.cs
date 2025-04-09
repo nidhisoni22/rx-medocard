@@ -16,6 +16,5 @@ namespace RxMedoWeb.Data
 
         // Add other DbSets for future models as needed
         // public DbSet<Hospital> Hospitals { get; set; }
-        // public DbSet<Offer> Offers { get; set; }
     }
 }

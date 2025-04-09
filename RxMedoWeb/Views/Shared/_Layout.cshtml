@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/navbar-clean.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/modern-style.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/service-cards-clean.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/service-section-bg.css" asp-append-version="true" />
@@ -43,18 +42,19 @@
     <link rel="stylesheet" href="~/css/hospital-cards.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/diagnostics.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/membership.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/offers.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/opd.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/pharmacy.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navbar-unified.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navbar-special-fix.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/get-started-btn.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/navbar-modern-update.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/RxMedoWeb.styles.css" asp-append-version="true" />
+
+    <!-- All navbar styles are now in navbar-unified.css -->
 </head>
 
 <body>
     <header class="header-modern">
-        <nav class="navbar navbar-expand-lg navbar-light navbar-modern">
-            <div class="container">
+        <nav class="navbar navbar-expand-custom navbar-light navbar-modern">
+            <div class="container position-relative d-flex justify-content-start align-items-center">
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">
                     <div class="logo-with-icon">
                         <div class="logo-icon">
@@ -66,32 +66,27 @@
                         </div>
                     </div>
                 </a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <div class="hamburger-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    style="display: block; visibility: visible; opacity: 1; position: absolute; right: 15px; top: 50%; transform: translateY(-50%); z-index: 1050; background-color: rgba(239, 71, 111, 0.3); padding: 0.7rem; border-radius: 8px; margin-left: auto; width: auto; height: auto; cursor: pointer; pointer-events: auto; overflow: visible; border: none; outline: none; box-shadow: none;">
+                    <div class="hamburger-icon" style="width: 30px; height: 22px; position: relative; display: flex; flex-direction: column; justify-content: space-between; visibility: visible; opacity: 1;">
+                        <span style="display: block; width: 100%; height: 3px; background-color: #ef476f; border-radius: 3px; transition: all 0.3s ease; visibility: visible; opacity: 1;"></span>
+                        <span style="display: block; width: 100%; height: 3px; background-color: #ef476f; border-radius: 3px; transition: all 0.3s ease; visibility: visible; opacity: 1;"></span>
+                        <span style="display: block; width: 100%; height: 3px; background-color: #ef476f; border-radius: 3px; transition: all 0.3s ease; visibility: visible; opacity: 1;"></span>
                     </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="Index">
                                 <span class="nav-icon"><i class="bi bi-house"></i></span>
                                 <span class="nav-text">Home</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Offers" asp-action="Index">
-                                <span class="nav-icon"><i class="bi bi-tags"></i></span>
-                                <span class="nav-text">Offers</span>
-                            </a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Hospitals" asp-action="Index">
-                                <span class="nav-icon"><i class="bi bi-building"></i></span>
+                                <span class="nav-icon"><i class="bi bi-hospital"></i></span>
                                 <span class="nav-text">Hospitals</span>
                             </a>
                         </li>
@@ -101,16 +96,17 @@
                                 <span class="nav-text">OPD</span>
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Pharmacy" asp-action="Index">
-                                <span class="nav-icon"><i class="bi bi-capsule"></i></span>
-                                <span class="nav-text">Pharmacy</span>
+                            <a class="nav-link" asp-controller="Diagnostics" asp-action="Index">
+                                <span class="nav-icon"><i class="bi bi-file-medical"></i></span>
+                                <span class="nav-text">Diagnostics</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Diagnostics" asp-action="Index">
-                                <span class="nav-icon"><i class="bi bi-heart-pulse"></i></span>
-                                <span class="nav-text">Diagnostics</span>
+                            <a class="nav-link" asp-controller="Offers" asp-action="Index">
+                                <span class="nav-icon"><i class="bi bi-gift"></i></span>
+                                <span class="nav-text">Offers</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -161,11 +157,10 @@
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Offers" asp-action="Index">Offers</a></li>
                         <li><a asp-controller="Hospitals" asp-action="Index">Hospitals</a></li>
                         <li><a asp-controller="OPD" asp-action="Index">OPD</a></li>
-                        <li><a asp-controller="Pharmacy" asp-action="Index">Pharmacy</a></li>
                         <li><a asp-controller="Diagnostics" asp-action="Index">Diagnostics</a></li>
+                        <li><a asp-controller="Offers" asp-action="Index">Offers</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
@@ -213,6 +208,8 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/navbar-active.js" asp-append-version="true"></script>
+    <script src="~/js/navbar-fix.js" asp-append-version="true"></script>
+    <script src="~/js/toggle-button-fix.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
