@@ -1,0 +1,91 @@
+@model List<RxMedoWeb.Models.Membership>
+@{
+    ViewData["Title"] = "Memberships";
+    Layout = "_AdminLayout";
+}
+
+<div class="admin-header">
+    <h1 class="admin-title">Membership Applications</h1>
+    <div class="d-flex align-items-center">
+        <span class="badge bg-primary rounded-pill me-2">@Model.Count</span>
+        <span class="text-muted">Total Applications</span>
+    </div>
+</div>
+
+<div class="admin-table-container">
+    <div class="table-responsive">
+        <table class="admin-table table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Membership Type</th>
+                    <th>Application Date</th>
+                    <th>Membership Number</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count > 0)
+                {
+                    @foreach (var membership in Model)
+                    {
+                        <tr>
+                            <td>@membership.Id</td>
+                            <td>@membership.FullName</td>
+                            <td>@membership.Email</td>
+                            <td>@membership.Phone</td>
+                            <td>@membership.MembershipType</td>
+                            <td>@membership.ApplicationDate.ToString("dd MMM yyyy")</td>
+                            <td>@(string.IsNullOrEmpty(membership.MembershipNumber) ? "-" : membership.MembershipNumber)</td>
+                            <td>
+                                @if (membership.IsApproved)
+                                {
+                                    <span class="status-badge status-confirmed">Approved</span>
+                                }
+                                else
+                                {
+                                    <span class="status-badge status-pending">Pending</span>
+                                }
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    @if (!membership.IsApproved)
+                                    {
+                                        <form asp-action="ApproveMembership" method="post" style="display: inline;">
+                                            <input type="hidden" name="id" value="@membership.Id" />
+                                            <button type="submit" class="btn btn-action btn-approve" title="Approve">
+                                                <i class="bi bi-check-circle"></i> Approve
+                                            </button>
+                                        </form>
+                                    }
+                                    <form asp-action="DeleteMembership" method="post" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this membership application?');">
+                                        <input type="hidden" name="id" value="@membership.Id" />
+                                        <button type="submit" class="btn btn-action btn-delete" title="Delete">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="9" class="text-center">No membership applications found</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Add any memberships-specific scripts here
+    </script>
+}

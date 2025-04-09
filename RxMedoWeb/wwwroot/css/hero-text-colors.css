@@ -1,0 +1,84 @@
+/* Hero Text Colors - Vibrant and Modern */
+
+/* Main heading color - Bright gradient text */
+.hero-redesign h1.display-4 {
+  background: linear-gradient(to right, #4a90e2, #6c63ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtitle color - Light teal */
+.hero-redesign p.lead {
+  color: #4ecdc4;
+  font-weight: 500;
+}
+
+/* Benefits box styling */
+.hero-benefits-centered {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Benefits heading color - Light gold */
+.hero-benefits-centered h2 {
+  color: #ffd166;
+  font-weight: 600;
+}
+
+/* Benefits list items - Light cyan */
+.hero-benefits-centered ul li {
+  color: #a5f2f3;
+}
+
+/* Check icon color - Bright green */
+.hero-benefits-centered i.bi-check-circle-fill {
+  color: #06d6a0;
+}
+
+/* Button styling */
+.modern-hero-btn {
+  background: linear-gradient(to right, #ef476f, #f78c6b);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.modern-hero-btn:hover {
+  background: linear-gradient(to right, #f78c6b, #ef476f);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(239, 71, 111, 0.3);
+}
+
+.modern-hero-btn-outline {
+  background: transparent;
+  color: #4ecdc4;
+  border: 2px solid #4ecdc4;
+  transition: all 0.3s ease;
+}
+
+.modern-hero-btn-outline:hover {
+  background-color: rgba(78, 205, 196, 0.1);
+  color: #4ecdc4;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(78, 205, 196, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .hero-redesign h1.display-4 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-redesign p.lead {
+    font-size: 1rem;
+  }
+  
+  .hero-benefits-centered h2 {
+    font-size: 1.1rem;
+  }
+}

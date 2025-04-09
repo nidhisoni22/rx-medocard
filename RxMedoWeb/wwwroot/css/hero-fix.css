@@ -1,0 +1,54 @@
+/* Hero section fixes */
+.modern-hero {
+  background: #001d4f !important;
+  color: #ffffff !important;
+}
+
+/* Remove vertical lines */
+.modern-hero::before,
+.annual-plans-section::before,
+.services-section::before,
+.hospitals-section-v2::before,
+.trust-cards-section::before,
+.about-section::before {
+  display: none !important;
+}
+
+/* Fix text colors */
+.modern-hero h1,
+.modern-hero .display-4 {
+  color: #ffffff !important;
+}
+
+.modern-hero p,
+.modern-hero .lead {
+  color: #ffffff !important;
+}
+
+.modern-hero .hero-benefits {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.modern-hero .hero-benefits h2 {
+  color: #ffffff !important;
+}
+
+.modern-hero .list-unstyled li {
+  color: #ffffff !important;
+}
+
+.modern-hero .list-unstyled li i {
+  color: #4caf50 !important;
+}
+
+/* Button styling */
+.modern-hero-btn {
+  background-color: #e53935 !important;
+  color: #ffffff !important;
+}
+
+.modern-hero-btn-outline {
+  background-color: transparent !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+}

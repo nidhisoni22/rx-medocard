@@ -193,6 +193,31 @@
   }
 }
 
+/* Animation classes for JavaScript activation */
+.animate-title, .animate-line, .animate-text, .animate-item, .animate-btn {
+  opacity: 0;
+}
+
+.animate-title.active {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-line.active {
+  animation: expandWidth 0.8s ease forwards;
+}
+
+.animate-text.active {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-item.active {
+  animation: fadeInLeft 0.6s ease forwards;
+}
+
+.animate-btn.active {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
 /* Floating animation for the image */
 .animate-image {
   animation: fadeInRight 1s ease forwards 0.5s, float 6s ease-in-out infinite 1.5s;
@@ -215,12 +240,12 @@
   .hospitals-section-v2 {
     padding: 60px 0;
   }
-  
+
   .hospitals-content-v2 {
     padding-right: 0;
     margin-bottom: 2rem;
   }
-  
+
   .hospitals-content-v2 h2 {
     font-size: 2rem;
   }
@@ -230,15 +255,15 @@
   .hospitals-section-v2 {
     padding: 40px 0;
   }
-  
+
   .hospitals-content-v2 h2 {
     font-size: 1.8rem;
   }
-  
+
   .hospitals-features-v2 li {
     font-size: 1rem;
   }
-  
+
   .find-hospitals-btn {
     padding: 0.7rem 1.5rem;
   }

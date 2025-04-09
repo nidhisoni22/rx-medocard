@@ -83,14 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Animate counter for hero stats
     function animateCounter() {
-        const statNumbers = document.querySelectorAll('.hero-stat-number');
+        const statNumbers = document.querySelectorAll('.count-up');
 
         statNumbers.forEach(statNumber => {
             // Skip if already animated
             if (statNumber.classList.contains('counted')) return;
-
-            // Check if in viewport
-            if (!isInViewport(statNumber)) return;
 
             // Mark as counted to prevent re-animation
             statNumber.classList.add('counted');
@@ -104,9 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Set animation duration based on number size
             const duration = isLargeNumber ? 2000 : 1500; // milliseconds
-
-            // Calculate increment step
-            const incrementStep = isLargeNumber ? Math.ceil(targetCount / 100) : 1;
 
             // Start counter
             let currentCount = 0;

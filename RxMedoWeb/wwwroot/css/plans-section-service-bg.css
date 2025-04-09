@@ -1,0 +1,316 @@
+/* Service Background Plans Section */
+.service-bg-plans-section {
+  position: relative;
+  padding: 0;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+/* Background image styling */
+.service-bg-plans-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/service.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(0.9);
+  z-index: 1;
+}
+
+/* Overlay gradient */
+.service-bg-plans-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  z-index: 2;
+}
+
+.service-bg-plans-section .container {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+}
+
+.service-plans-content-wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 600px;
+}
+
+/* Content styling */
+.service-plans-content {
+  padding: 4rem 2rem 4rem 0;
+  color: #ffffff;
+  position: relative;
+}
+
+.service-plans-content h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.service-plans-content h2 .text-highlight {
+  color: #4caf50;
+  position: relative;
+  display: inline-block;
+}
+
+.service-plans-content h2 .text-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(76, 175, 80, 0.3);
+  z-index: -1;
+}
+
+.service-plans-content p {
+  font-size: 1.2rem;
+  color: #0c0c0c;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  max-width: 90%;
+}
+
+/* Benefits list styling */
+.service-plans-benefits {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+.service-plans-benefits li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.service-plans-benefits li.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Staggered animation delays */
+.service-plans-benefits li:nth-child(1) { transition-delay: 0.1s; }
+.service-plans-benefits li:nth-child(2) { transition-delay: 0.2s; }
+.service-plans-benefits li:nth-child(3) { transition-delay: 0.3s; }
+.service-plans-benefits li:nth-child(4) { transition-delay: 0.4s; }
+.service-plans-benefits li:nth-child(5) { transition-delay: 0.5s; }
+
+.service-plans-benefits li .benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #0c140c;
+  border-radius: 50%;
+  margin-right: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.service-plans-benefits li:hover .benefit-icon {
+  transform: scale(1.1);
+}
+
+.service-plans-benefits li .benefit-icon i {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.service-plans-benefits li .benefit-text {
+  font-size: 1.1rem;
+  color: #0c0c0c;
+  line-height: 1.5;
+}
+
+/* Button styling */
+.service-plans-cta-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 35px;
+  background-color: #0c140c ;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease 0.6s;
+}
+
+.service-plans-cta-button.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.service-plans-cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #388e3c;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease;
+}
+
+.service-plans-cta-button:hover {
+  color: #fff;
+  box-shadow: 0 15px 25px rgba(76, 175, 80, 0.4);
+  transform: translateY(-3px);
+}
+
+.service-plans-cta-button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.service-plans-cta-button i {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.service-plans-cta-button:hover i {
+  transform: translateX(5px);
+}
+
+/* Floating elements */
+.service-floating-element {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 3;
+  opacity: 0.15;
+}
+
+.service-floating-element-1 {
+  width: 150px;
+  height: 150px;
+  background-color: #4caf50;
+  top: 10%;
+  right: 10%;
+  animation: service-float 15s ease-in-out infinite;
+}
+
+.service-floating-element-2 {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  bottom: 15%;
+  right: 20%;
+  animation: service-float 12s ease-in-out infinite 1s;
+}
+
+.service-floating-element-3 {
+  width: 70px;
+  height: 70px;
+  background-color: #4caf50;
+  top: 20%;
+  left: 10%;
+  animation: service-float 10s ease-in-out infinite 2s;
+}
+
+@keyframes service-float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(15px, -15px) rotate(5deg);
+  }
+  50% {
+    transform: translate(0, -30px) rotate(10deg);
+  }
+  75% {
+    transform: translate(-15px, -15px) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .service-plans-content {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .service-plans-content h2 {
+    font-size: 2.5rem;
+  }
+  
+  .service-plans-content p {
+    font-size: 1.1rem;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .service-plans-benefits li {
+    justify-content: center;
+  }
+  
+  .service-bg-plans-section::after {
+    background: linear-gradient(180deg, 
+      rgba(0, 29, 79, 0.95) 0%, 
+      rgba(0, 29, 79, 0.85) 100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .service-bg-plans-section {
+    min-height: 500px;
+  }
+  
+  .service-plans-content-wrapper {
+    min-height: 500px;
+  }
+  
+  .service-plans-content h2 {
+    font-size: 2rem;
+  }
+  
+  .service-plans-content p {
+    font-size: 1rem;
+  }
+  
+  .service-plans-benefits li .benefit-text {
+    font-size: 1rem;
+  }
+  
+  .service-plans-cta-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}

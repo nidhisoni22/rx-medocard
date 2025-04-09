@@ -1,0 +1,25 @@
+<section class="hospitals-section-v2 mt-5 py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="hospitals-content-v2">
+                    <h2 class="animate-title">Find the Best Healthcare Facilities Near You</h2>
+                    <div class="title-underline animate-line"></div>
+                    <p class="lead mb-4 animate-text">Access a network of over 500 hospitals and healthcare facilities across India. Our partnerships ensure you receive quality care at discounted rates with your RX MEDO CARD membership.</p>
+                    <ul class="hospitals-features-v2 mb-4">
+                        <li class="animate-item" style="--delay: 0.3s"><span class="check-icon"><i class="bi bi-check"></i></span> Access to 500+ hospitals across India</li>
+                        <li class="animate-item" style="--delay: 0.5s"><span class="check-icon"><i class="bi bi-check"></i></span> Special rates for card members</li>
+                        <li class="animate-item" style="--delay: 0.7s"><span class="check-icon"><i class="bi bi-check"></i></span> Quality healthcare in your neighborhood</li>
+                        <li class="animate-item" style="--delay: 0.9s"><span class="check-icon"><i class="bi bi-check"></i></span> Cashless treatment facilities</li>
+                    </ul>
+                    <a asp-controller="Hospitals" asp-action="Index" class="find-hospitals-btn animate-btn">Find Hospitals <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 d-none d-lg-block">
+                <div class="stethoscope-image-container">
+                    <img src="~/images/stethoscope.jpg" alt="Stethoscope" class="img-fluid stethoscope-image animate-fade-in">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+/* Get Started Button Styling */
+
+.get-started-btn {
+  background: linear-gradient(to right, #ef476f, #f78c6b) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 0.6rem 1.5rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  box-shadow: 0 4px 10px rgba(239, 71, 111, 0.2) !important;
+}
+
+.get-started-btn:hover {
+  background: linear-gradient(to right, #f78c6b, #ef476f) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 20px rgba(239, 71, 111, 0.3) !important;
+  color: white !important;
+}
+
+.get-started-btn .nav-text {
+  position: relative !important;
+}
+
+/* Override the default nav-link hover effect */
+.get-started-btn.nav-link::after {
+  display: none !important;
+}

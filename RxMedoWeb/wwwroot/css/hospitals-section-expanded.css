@@ -1,0 +1,234 @@
+/* Hospitals Section Expanded with Stethoscope Background */
+
+.hospitals-section-expanded {
+  background-color: #f8f9fa;
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* Stethoscope background image */
+.hospitals-section-expanded::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-image: url('../images/stethoscope.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: -300px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.1;
+  z-index: 1;
+}
+
+/* Content card styling */
+.hospitals-card-expanded {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hospitals-card-expanded::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #1A237E, #3949AB);
+}
+
+.hospitals-card-expanded:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Content styling */
+.hospitals-content-expanded {
+  position: relative;
+  z-index: 2;
+}
+
+.hospitals-content-expanded h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.title-underline-expanded {
+  width: 80px;
+  height: 4px;
+  background-color: #1A237E;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: expandWidth 0.8s ease forwards 0.3s;
+}
+
+.hospitals-content-expanded .lead {
+  color: #555;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards 0.4s;
+}
+
+/* Features list styling */
+.hospitals-features-expanded {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.hospitals-features-expanded li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #444;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.6s ease forwards;
+  animation-delay: var(--delay, 0.3s);
+  width: 50%;
+  padding-right: 15px;
+}
+
+.check-icon-expanded {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #1A237E;
+  border-radius: 50%;
+  margin-right: 12px;
+  color: white;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Button styling */
+.find-hospitals-btn-expanded {
+  display: inline-flex;
+  align-items: center;
+  background-color: #1A237E;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards 0.9s;
+}
+
+.find-hospitals-btn-expanded i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.find-hospitals-btn-expanded:hover {
+  background-color: #303F9F;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(26, 35, 126, 0.2);
+  color: white;
+  text-decoration: none;
+}
+
+.find-hospitals-btn-expanded:hover i {
+  transform: translateX(5px);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .hospitals-section-expanded {
+    padding: 60px 0;
+  }
+  
+  .hospitals-card-expanded {
+    padding: 2rem;
+  }
+  
+  .hospitals-content-expanded h2 {
+    font-size: 2rem;
+  }
+  
+  .hospitals-features-expanded li {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .hospitals-section-expanded {
+    padding: 40px 0;
+  }
+  
+  .hospitals-content-expanded h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hospitals-features-expanded li {
+    font-size: 1rem;
+  }
+  
+  .find-hospitals-btn-expanded {
+    padding: 0.7rem 1.5rem;
+  }
+  
+  .hospitals-section-expanded::before {
+    width: 400px;
+    left: -250px;
+  }
+}

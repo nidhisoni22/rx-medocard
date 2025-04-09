@@ -1,0 +1,69 @@
+/* Medicare Background Styles */
+.medicare-hero,
+.medicare-stats,
+.medicare-featured,
+.medicare-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.medicare-hero {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+}
+
+.medicare-stats {
+  background-color: var(--primary-blue);
+}
+
+.medicare-featured {
+  background-color: var(--light-gray);
+}
+
+.medicare-cta {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+}
+
+/* Background pattern with vertical lines and waves */
+.medicare-hero::before,
+.medicare-stats::before,
+.medicare-featured::before,
+.medicare-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/medicare-waves.svg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Ensure content is above the background */
+.medicare-hero-content,
+.medicare-stat-item,
+.medicare-featured-content,
+.medicare-section-title,
+.medicare-cta-content,
+.row {
+  position: relative;
+  z-index: 1;
+}
+
+/* Additional vertical lines for sections without the wave background */
+.medicare-section:not(.medicare-featured)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(225, 243, 248, 0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(225, 243, 248, 0.05) 1px, transparent 1px);
+  background-size: 
+    200px 100%,
+    50px 100%;
+  z-index: 0;
+}

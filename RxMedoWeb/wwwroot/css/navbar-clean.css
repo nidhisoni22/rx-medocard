@@ -94,7 +94,7 @@
 
 /* Active nav item */
 .nav-item.active .nav-link {
-  color: #E53935 !important;
+  color: #333 !important;
   font-weight: 600;
 }
 

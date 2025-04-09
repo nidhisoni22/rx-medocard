@@ -1,0 +1,331 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="modern-hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="modern-hero-content fade-in">
+                    <h1 class="display-4 fw-bold mb-4">Your Health, Our Priority</h1>
+                    <p class="lead mb-4">Join RX MEDO CARD for exclusive healthcare benefits and save up to 30% on medical services.</p>
+                    <div class="hero-benefits p-4 mb-4">
+                        <h2 class="h5 mb-3">Membership Benefits:</h2>
+                        <ul class="list-unstyled mb-0">
+                            <li><i class="bi bi-check-circle-fill me-2"></i>Flat 20% Discount on all Pharmacy products</li>
+                            <li><i class="bi bi-check-circle-fill me-2"></i>Flat 30% discount on Doctor Consultations</li>
+                            <li><i class="bi bi-check-circle-fill me-2"></i>Flat 30% discount on Diagnostic Tests</li>
+                        </ul>
+                    </div>
+                    <div class="hero-buttons">
+                        <a asp-controller="Membership" asp-action="Index" class="modern-hero-btn me-3">Explore MedoCards</a>
+                        <a asp-controller="Diagnostics" asp-action="Index" class="modern-hero-btn-outline">Book Diagnostic Tests</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="modern-hero-image fade-in delay-3">
+                    <img src="~/images/hero2.png" alt="Healthcare Illustration" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="annual-plans-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="annual-plans-image slide-in-left">
+                    <img src="~/images/doctors.jpg" alt="Our Doctors" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="annual-plans-content slide-in-right">
+                    <h2 class="fade-in-up">Our plans <span class="text-primary">specialize</span> in your health</h2>
+                    <p class="fade-in-up stagger-1">From affordable medication to discounted consultations, we have expertise in making healthcare accessible for everyone. Our annual plans are designed to provide comprehensive coverage for all your medical needs.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2 fade-in-up stagger-2"><i class="bi bi-check-circle-fill me-2 text-primary"></i> Reduce financial stress during medical emergencies</li>
+                        <li class="mb-2 fade-in-up stagger-3"><i class="bi bi-check-circle-fill me-2 text-primary"></i> Improve health outcomes through better medication adherence</li>
+                        <li class="mb-2 fade-in-up stagger-4"><i class="bi bi-check-circle-fill me-2 text-primary"></i> Save significantly on medical costs</li>
+                        <li class="mb-2 fade-in-up stagger-5"><i class="bi bi-check-circle-fill me-2 text-primary"></i> Access quality healthcare more easily</li>
+                        <li class="mb-2 fade-in-up stagger-6"><i class="bi bi-check-circle-fill me-2 text-primary"></i> Empower yourself for a healthier future</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-section">
+    <div class="container">
+        <div class="services-heading">
+            <h2>Our Services</h2>
+            <p>We provide a wide range of healthcare services to meet your needs with quality care and affordable prices</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card fade-up delay-1">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+                        <h4 class="card-title">Family Physician</h4>
+                        <p class="card-text">Personalized health solutions from our in-house Family Physicians for you & your family anytime anywhere</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card fade-up delay-2">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="bi bi-hospital"></i>
+                        </div>
+                        <h4 class="card-title">Specialists</h4>
+                        <p class="card-text">Schedule an appointment with our top specialists for specific health concerns and expert medical advice</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card fade-up delay-3">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="bi bi-capsule"></i>
+                        </div>
+                        <h4 class="card-title">Order Medicines</h4>
+                        <p class="card-text">Heavily Discounted, Safe & Reliable doorstep delivery of your medicines across India</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card fade-up delay-4">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="bi bi-clipboard2-pulse"></i>
+                        </div>
+                        <h4 class="card-title">Diagnostic Tests</h4>
+                        <p class="card-text">Heavily Discounted High-Quality Health Screenings for you & your family members</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hospitals-section-v2 mt-5 py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="hospitals-content-v2">
+                    <h2 class="animate-title">Find the Best Healthcare Facilities Near You</h2>
+                    <div class="title-underline animate-line"></div>
+                    <p class="lead mb-4 animate-text">Access our network of premium hospitals and clinics offering exclusive discounts for RX MEDO CARD members. Our partner facilities provide exceptional care with reduced waiting times and priority appointments.</p>
+                    <ul class="hospitals-features-v2 mb-4">
+                        <li class="animate-item" style="--delay: 0.3s"><span class="check-icon"><i class="bi bi-check"></i></span> Access to 500+ hospitals across India</li>
+                        <li class="animate-item" style="--delay: 0.5s"><span class="check-icon"><i class="bi bi-check"></i></span> Special rates for card members</li>
+                        <li class="animate-item" style="--delay: 0.7s"><span class="check-icon"><i class="bi bi-check"></i></span> Quality healthcare in your neighborhood</li>
+                    </ul>
+                    <a asp-controller="Hospitals" asp-action="Index" class="find-hospitals-btn animate-btn">Find Hospitals <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="hospitals-image-v2">
+                    <img src="~/images/patient.png" class="img-fluid animate-image" alt="Patient Care">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="trust-cards-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>RxMedical Trust Programs</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="trust-card card-1">
+                    <div class="trust-card-header">
+                        <h3>RxMedical Trust Vision</h3>
+                    </div>
+                    <div class="trust-card-body">
+                        <p>Our vision is to make healthcare accessible and affordable for everyone through innovative discount programs and partnerships with quality healthcare providers.</p>
+                        <ul class="trust-features">
+                            <li>
+                                <span class="check-icon"><i class="bi bi-check"></i></span>
+                                <span>Up to 30% discount on OPD consultations</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><i class="bi bi-check"></i></span>
+                                <span>Reduced rates on pharmacy products</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><i class="bi bi-check"></i></span>
+                                <span>Affordable diagnostic tests</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="trust-card card-2">
+                    <div class="trust-card-header">
+                        <h3>RxMedical Trust Mission</h3>
+                    </div>
+                    <div class="trust-card-body">
+                        <p>Our mission is to reduce the financial burden of healthcare by providing significant discounts on essential medical services and products.</p>
+                        <ul class="trust-features">
+                            <li>
+                                <span class="check-icon"><i class="bi bi-check"></i></span>
+                                <span>Up to 30% discount on medications</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><i class="bi bi-check"></i></span>
+                                <span>Savings on over-the-counter remedies</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><i class="bi bi-check"></i></span>
+                                <span>Reduced costs for health essentials</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="trust-card card-3">
+                    <div class="trust-card-header">
+                        <h3>RxMedical Trust Senior Care</h3>
+                    </div>
+                    <div class="trust-card-body">
+                        <p>We provide specialized care services for seniors at home in Delhi NCR, with smart solutions designed for comfort and dignity.</p>
+                        <ul class="trust-features">
+                            <li>
+                                <span class="check-icon"><i class="bi bi-check"></i></span>
+                                <span>In-home care services</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><i class="bi bi-check"></i></span>
+                                <span>Senior living community support</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><i class="bi bi-check"></i></span>
+                                <span>Long-term and memory care</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-image-container">
+                    <div class="about-image">
+                        <img src="~/images/rxmedical.jpeg" alt="RXMedical Trust" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h2>About RXMedical Trust</h2>
+                    <p>Get the care you deserve at a fraction of the cost with our exclusive 1-Year Card, offering discounts of up to 30% on a wide range of medical services. Whether you need routine check-ups, specialist consultations, diagnostic tests, or treatment procedures, our card provides significant savings.</p>
+                    <p>Valid for a full year, this offer ensures that you can access top-quality healthcare at affordable prices. Don't miss this limited-time opportunity to take control of your health!</p>
+                    <ul class="about-features">
+                        <li><i class="bi bi-shield-check"></i> Trusted by over 10,000+ members across India</li>
+                        <li><i class="bi bi-hospital"></i> Network of 500+ premium healthcare facilities</li>
+                        <li><i class="bi bi-heart-pulse"></i> Dedicated to making healthcare accessible for all</li>
+                    </ul>
+                    <a asp-controller="Membership" asp-action="Index" class="join-now-btn">Join Now <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        // Scroll animation for sections
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial check on page load
+            checkVisibility();
+
+            // Check on scroll
+            window.addEventListener('scroll', function() {
+                checkVisibility();
+            });
+
+            function checkVisibility() {
+                // Handle fade-up elements
+                const fadeElements = document.querySelectorAll('.fade-up');
+                fadeElements.forEach(function(element) {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('active');
+                    }
+                });
+
+                // Handle slide-in elements
+                const slideElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+                slideElements.forEach(function(element) {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('active');
+                    }
+                });
+
+                // Handle fade-in-up elements
+                const fadeInUpElements = document.querySelectorAll('.fade-in-up');
+                fadeInUpElements.forEach(function(element) {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('active');
+                    }
+                });
+
+                // Handle trust cards
+                const trustCards = document.querySelectorAll('.trust-card');
+                trustCards.forEach(function(element) {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('active');
+                    }
+                });
+
+                // Handle about section elements
+                const aboutElements = document.querySelectorAll('.about-image-container, .about-content');
+                aboutElements.forEach(function(element) {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
+}

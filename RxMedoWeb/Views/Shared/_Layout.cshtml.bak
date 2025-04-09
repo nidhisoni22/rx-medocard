@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RX MEDO CARD</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navbar-clean.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modern-style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/services-animation.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/hospitals-section.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/hospitals-section-v2.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/annual-plans-animation.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/vision-section.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/trust-cards.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/about-section.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/modern-footer.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/hospital-cards.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/diagnostics.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/membership.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RxMedoWeb.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header class="modern-navbar"
+        style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/images/logo.png" alt="RX MEDO CARD Logo" class="logo-image">
+                <div class="logo-text-wrapper">
+                    <div class="logo-text">RX MEDO CARD</div>
+                    <div class="logo-subtitle">AN INITIATIVE OF RX MEDICAL TRUST</div>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" id="navbarToggler" type="button" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")"
+                    asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="nav-icon"><i class="bi bi-house-door"></i></span>
+                    <span class="nav-text">Home</span>
+                </a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Offers" ? "active" : "")"
+                    asp-area="" asp-controller="Offers" asp-action="Index">
+                    <span class="nav-icon"><i class="bi bi-tag"></i></span>
+                    <span class="nav-text">Offers</span>
+                </a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Hospitals" ? "active" : "")"
+                    asp-area="" asp-controller="Hospitals" asp-action="Index">
+                    <span class="nav-icon"><i class="bi bi-hospital"></i></span>
+                    <span class="nav-text">Hospitals</span>
+                </a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "OPD" ? "active" : "")"
+                    asp-area="" asp-controller="OPD" asp-action="Index">
+                    <span class="nav-icon"><i class="bi bi-clipboard2-pulse"></i></span>
+                    <span class="nav-text">OPD</span>
+                </a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Pharmacy" ? "active" : "")"
+                    asp-area="" asp-controller="Pharmacy" asp-action="Index">
+                    <span class="nav-icon"><i class="bi bi-capsule"></i></span>
+                    <span class="nav-text">Pharmacy</span>
+                </a>
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Diagnostics" ? "active" : "")"
+                    asp-area="" asp-controller="Diagnostics" asp-action="Index">
+                    <span class="nav-icon"><i class="bi bi-heart-pulse"></i></span>
+                    <span class="nav-text">Diagnostics</span>
+                </a>
+                <a class="sign-up-btn" asp-area="" asp-controller="Membership" asp-action="Index">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main" style="margin-top: 80px; padding-top: 0;">
+        @RenderBody()
+    </main>
+
+    <footer class="modern-footer">
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-logo-container">
+                        <div class="footer-logo">
+                            <img src="~/images/logo.png" alt="RX MEDO CARD Logo" class="footer-logo-image">
+                            <div class="footer-logo-text">
+                                <div class="footer-logo-title">RX MEDO CARD</div>
+                                <div class="footer-logo-subtitle">AN INITIATIVE OF RX MEDICAL TRUST</div>
+                            </div>
+                        </div>
+                        <div class="footer-tagline">WHERE HEALTH MEETS SAVINGS</div>
+                    </div>
+
+                    <div class="footer-contact">
+                        <p><i class="bi bi-geo-alt"></i> Crossing Republic, Ghaziabad, 201016</p>
+                        <p><i class="bi bi-telephone"></i> +919999307517</p>
+                        <p><i class="bi bi-envelope"></i> RxMedicalTrust@gmail.com</p>
+                    </div>
+
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h3 class="footer-heading">Useful Links</h3>
+                    <ul class="footer-links">
+                        <li><a asp-controller="Home" asp-action="Index"><i class="bi bi-chevron-right"></i> Home</a>
+                        </li>
+                        <li><a asp-controller="Offers" asp-action="Index"><i class="bi bi-chevron-right"></i> Offers</a>
+                        </li>
+                        <li><a asp-controller="Hospitals" asp-action="Index"><i class="bi bi-chevron-right"></i>
+                                Hospitals</a></li>
+                        <li><a asp-controller="OPD" asp-action="Index"><i class="bi bi-chevron-right"></i> OPD</a></li>
+                        <li><a asp-controller="Pharmacy" asp-action="Index"><i class="bi bi-chevron-right"></i>
+                                Pharmacy</a></li>
+                        <li><a asp-controller="Diagnostics" asp-action="Index"><i class="bi bi-chevron-right"></i>
+                                Diagnostics</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h3 class="footer-heading">Departments</h3>
+                    <div class="footer-departments">
+                        <div class="footer-departments-column">
+                            <ul class="footer-links">
+                                <li><a href="/offers"><i class="bi bi-chevron-right"></i> Cardiology</a></li>
+                                <li><a href="/offers"><i class="bi bi-chevron-right"></i> Dentistry</a></li>
+                                <li><a href="/offers"><i class="bi bi-chevron-right"></i> Dermatology</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-departments-column">
+                            <ul class="footer-links">
+                                <li><a href="/offers"><i class="bi bi-chevron-right"></i> ENT</a></li>
+                                <li><a href="/offers"><i class="bi bi-chevron-right"></i> Internal Medicine</a></li>
+                                <li><a href="/offers"><i class="bi bi-chevron-right"></i> Neurology</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h3 class="footer-heading">Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Ambulance Service</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Daycare Center</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Health Checkups</a></li>
+                    </ul>
+
+                    <h3 class="footer-heading">Newsletter</h3>
+                    <div class="footer-newsletter">
+                        <p>Subscribe for updates on our services and offers</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email">
+                            <button type="submit" class="newsletter-button"><i class="bi bi-send"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; @DateTime.Now.Year - RxMedical Trust - All Rights Reserved
+                </div>
+                <div class="footer-credits">
+                    Designed by <a href="https://e2vllp.com/" target="_blank">Employment Express</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/hospital-cards.js" asp-append-version="true"></script>
+    <script src="~/js/diagnostics.js" asp-append-version="true"></script>
+    <script src="~/js/membership.js" asp-append-version="true"></script>
+
+    <script>
+        // Mobile menu toggle and scroll effects
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggler = document.getElementById('navbarToggler');
+            const navLinks = document.getElementById('navLinks');
+            const navbar = document.querySelector('.modern-navbar');
+
+            // Mobile menu toggle
+            navbarToggler.addEventListener('click', function () {
+                navLinks.classList.toggle('show');
+            });
+
+            // Scroll effect for navbar
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

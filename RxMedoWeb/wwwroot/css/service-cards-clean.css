@@ -1,0 +1,222 @@
+/* Clean Service Cards Styling */
+
+.services-section {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-heading {
+  position: relative;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.services-heading h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.services-heading h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #1A237E, #E53935);
+  border-radius: 3px;
+}
+
+.services-heading p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Clean service card design */
+.service-card-clean {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  border: none;
+  margin-bottom: 30px;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.service-card-clean:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Service icon styling */
+.service-icon-clean {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #3f51b5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.service-icon-clean i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Service card for Family Physician */
+.service-card-clean.family-physician .service-icon-clean {
+  background-color: #f5f5f5;
+}
+
+.service-card-clean.family-physician .service-icon-clean i {
+  color: #333;
+}
+
+/* Service card for Specialists */
+.service-card-clean.specialists .service-icon-clean {
+  background-color: #f5f5f5;
+}
+
+.service-card-clean.specialists .service-icon-clean i {
+  color: #333;
+}
+
+/* Service card for Order Medicines */
+.service-card-clean.order-medicines .service-icon-clean {
+  background-color: #3f51b5;
+}
+
+.service-card-clean.order-medicines .service-icon-clean i {
+  color: white;
+}
+
+/* Service card for Diagnostic Tests */
+.service-card-clean.diagnostic-tests .service-icon-clean {
+  background-color: #f5f5f5;
+}
+
+.service-card-clean.diagnostic-tests .service-icon-clean i {
+  color: #333;
+}
+
+/* Card title styling */
+.service-card-clean .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+.service-card-clean .card-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3f51b5;
+  transform: scaleX(0.3);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service-card-clean.order-medicines .card-title::after {
+  background-color: #3f51b5;
+  transform: scaleX(1);
+}
+
+.service-card-clean:hover .card-title::after {
+  transform: scaleX(1);
+}
+
+/* Card text styling */
+.service-card-clean .card-text {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Animation classes */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .services-section {
+    padding: 4rem 0;
+  }
+  
+  .services-heading h2 {
+    font-size: 2rem;
+  }
+  
+  .service-card-clean {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .services-section {
+    padding: 3rem 0;
+  }
+  
+  .services-heading h2 {
+    font-size: 1.8rem;
+  }
+  
+  .service-icon-clean {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .service-icon-clean i {
+    font-size: 1.3rem;
+  }
+  
+  .service-card-clean .card-title {
+    font-size: 1.1rem;
+  }
+}

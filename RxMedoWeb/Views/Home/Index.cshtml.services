@@ -1,0 +1,47 @@
+<section class="services-section" style="position: relative; overflow: hidden;">
+    
+    <div class="container">
+        <div class="services-heading">
+            <h2>Our Services</h2>
+            <p>We provide a wide range of healthcare services to meet your needs with quality care and affordable prices</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card-clean family-physician fade-up delay-1">
+                    <div class="service-icon-clean">
+                        <i class="bi bi-person-plus"></i>
+                    </div>
+                    <h4 class="card-title">Family Physician</h4>
+                    <p class="card-text">Personalized health solutions from our in-house Family Physicians for you & your family anytime anywhere</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card-clean specialists fade-up delay-2">
+                    <div class="service-icon-clean">
+                        <i class="bi bi-hospital"></i>
+                    </div>
+                    <h4 class="card-title">Specialists</h4>
+                    <p class="card-text">Schedule an appointment with our top specialists for specific health concerns and expert medical advice</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card-clean order-medicines fade-up delay-3">
+                    <div class="service-icon-clean">
+                        <i class="bi bi-capsule"></i>
+                    </div>
+                    <h4 class="card-title">Order Medicines</h4>
+                    <p class="card-text">Heavily Discounted, Safe & Reliable doorstep delivery of your medicines across India</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card-clean diagnostic-tests fade-up delay-4">
+                    <div class="service-icon-clean">
+                        <i class="bi bi-clipboard2-pulse"></i>
+                    </div>
+                    <h4 class="card-title">Diagnostic Tests</h4>
+                    <p class="card-text">Heavily Discounted High-Quality Health Screenings for you & your family members</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

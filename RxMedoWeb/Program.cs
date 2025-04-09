@@ -1,11 +1,25 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using RxMedoWeb.Data;
+using RxMedoWeb.Services;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add authentication
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Admin/Login";
+        options.AccessDeniedPath = "/Admin/Login";
+        options.ExpireTimeSpan = TimeSpan.FromHours(3);
+    });
+
+// Add authorization
+builder.Services.AddAuthorization();
 
 // Add DbContext with error handling
 try
@@ -27,6 +41,9 @@ catch (Exception ex)
     builder.Services.AddScoped<ApplicationDbContext>(provider => null);
 }
 
+// Register AuthService
+builder.Services.AddScoped<AuthService>();
+
 var app = builder.Build();
 
 // Apply migrations at startup
@@ -40,6 +57,10 @@ try
             Console.WriteLine("Applying database migrations...");
             dbContext.Database.Migrate();
             Console.WriteLine("Database migrations applied successfully.");
+            
+            // Create default admin user if not exists
+            var authService = scope.ServiceProvider.GetRequiredService<AuthService>();
+            await authService.CreateDefaultAdminIfNotExistsAsync();
         }
         else
         {
@@ -65,6 +86,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

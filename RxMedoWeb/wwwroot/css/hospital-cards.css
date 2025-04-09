@@ -74,28 +74,25 @@
 
 /* Hospital network section */
 .hospital-network {
-  background-color: #1A237E;
+  background: linear-gradient(135deg, #001d4f 0%, #0056b3 100%);
   color: white;
   border-radius: 15px;
   padding: 3rem;
   margin-bottom: 4rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 15px 30px rgba(26, 35, 126, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 29, 79, 0.3);
   z-index: 2;
-  animation: pulse 6s ease-in-out infinite;
 }
 
 .hospital-network::before {
   content: '';
   position: absolute;
   top: 0;
-  right: 0;
-  width: 50%;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background-image: url('../images/pattern.svg');
-  background-size: cover;
-  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   z-index: 1;
 }
 
@@ -108,9 +105,20 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards, bounce 5s ease-in-out infinite 2s;
+  position: relative;
+  padding-bottom: 15px;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hospital-network h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: #e53935;
+  border-radius: 3px;
 }
 
 .hospital-network p {
@@ -118,14 +126,55 @@
   opacity: 0.9;
   margin-bottom: 2rem;
   max-width: 600px;
-  opacity: 0;
-  transform: translateY(20px);
   animation: fadeInUp 0.8s ease forwards 0.3s;
 }
 
-.hospital-network .btn {
-  background-color: white;
-  color: #1A237E;
+/* Hospital stats */
+.hospital-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  animation: fadeInUp 0.8s ease forwards 0.4s;
+}
+
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Network image */
+.network-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  animation: fadeInRight 0.8s ease forwards 0.5s;
+}
+
+.network-image {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.2));
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Button styling */
+.network-btn {
+  background-color: #e53935;
+  color: white;
   border: none;
   padding: 0.8rem 1.8rem;
   border-radius: 50px;
@@ -133,24 +182,37 @@
   display: inline-flex;
   align-items: center;
   transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards 0.5s;
+  text-decoration: none;
+  animation: fadeInUp 0.8s ease forwards 0.6s;
+  box-shadow: 0 5px 15px rgba(229, 57, 53, 0.3);
 }
 
-.hospital-network .btn i {
+.network-btn i {
   margin-left: 8px;
   transition: transform 0.3s ease;
 }
 
-.hospital-network .btn:hover {
-  background-color: #f8f9fa;
+.network-btn:hover {
+  background-color: #f44336;
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(229, 57, 53, 0.4);
+  color: white;
+  text-decoration: none;
 }
 
-.hospital-network .btn:hover i {
+.network-btn:hover i {
   transform: translateX(5px);
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Hospital cards container */
@@ -489,6 +551,14 @@
   .hospital-network h2 {
     font-size: 2rem;
   }
+
+  .hospital-stats {
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2.4rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -514,6 +584,25 @@
 
   .hospital-network p {
     font-size: 1rem;
+  }
+
+  .hospital-stats {
+    gap: 1rem;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .stat-item {
+    flex: 1;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
   }
 
   .hospital-card-img-container {

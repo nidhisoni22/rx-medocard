@@ -1,0 +1,151 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "_AdminLayout";
+}
+
+<div class="admin-header">
+    <h1 class="admin-title">Dashboard</h1>
+    <div class="d-flex align-items-center">
+        <span class="text-muted me-2">Welcome, Admin</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-lg-3">
+        <div class="dashboard-card">
+            <div class="dashboard-card-header">
+                <h5 class="dashboard-card-title">Diagnostic Bookings</h5>
+                <i class="bi bi-heart-pulse dashboard-card-icon"></i>
+            </div>
+            <h2 class="dashboard-card-value">@ViewBag.DiagnosticBookingsCount</h2>
+            <p class="dashboard-card-description">Total diagnostic test bookings</p>
+            <a asp-action="DiagnosticBookings" class="btn btn-sm btn-primary mt-3">
+                <i class="bi bi-eye me-1"></i> View All
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="dashboard-card">
+            <div class="dashboard-card-header">
+                <h5 class="dashboard-card-title">Memberships</h5>
+                <i class="bi bi-person-vcard dashboard-card-icon"></i>
+            </div>
+            <h2 class="dashboard-card-value">@ViewBag.MembershipsCount</h2>
+            <p class="dashboard-card-description">Total membership applications</p>
+            <a asp-action="Memberships" class="btn btn-sm btn-primary mt-3">
+                <i class="bi bi-eye me-1"></i> View All
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="admin-table-container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-0">Recent Diagnostic Bookings</h5>
+                <a asp-action="DiagnosticBookings" class="btn btn-sm btn-outline-primary">
+                    <i class="bi bi-arrow-right"></i> View All
+                </a>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table table">
+                    <thead>
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Test Type</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.RecentDiagnosticBookings != null && ViewBag.RecentDiagnosticBookings.Count > 0)
+                        {
+                            @foreach (var booking in ViewBag.RecentDiagnosticBookings)
+                            {
+                                <tr>
+                                    <td>@booking.PatientName</td>
+                                    <td>@booking.TestType</td>
+                                    <td>
+                                        @if (booking.IsConfirmed)
+                                        {
+                                            <span class="status-badge status-confirmed">Confirmed</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="status-badge status-pending">Pending</span>
+                                        }
+                                    </td>
+                                    <td>@booking.BookingDate.ToString("dd MMM yyyy")</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4" class="text-center">No recent bookings</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="admin-table-container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-0">Recent Memberships</h5>
+                <a asp-action="Memberships" class="btn btn-sm btn-outline-primary">
+                    <i class="bi bi-arrow-right"></i> View All
+                </a>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Membership Type</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.RecentMemberships != null && ViewBag.RecentMemberships.Count > 0)
+                        {
+                            @foreach (var membership in ViewBag.RecentMemberships)
+                            {
+                                <tr>
+                                    <td>@membership.FullName</td>
+                                    <td>@membership.MembershipType</td>
+                                    <td>
+                                        @if (membership.IsApproved)
+                                        {
+                                            <span class="status-badge status-confirmed">Approved</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="status-badge status-pending">Pending</span>
+                                        }
+                                    </td>
+                                    <td>@membership.ApplicationDate.ToString("dd MMM yyyy")</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4" class="text-center">No recent memberships</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Add any dashboard-specific scripts here
+    </script>
+}

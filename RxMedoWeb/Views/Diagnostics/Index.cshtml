@@ -17,15 +17,15 @@
 
                         <div class="hero-stats">
                             <div class="hero-stat">
-                                <div class="hero-stat-number" data-count="21" data-suffix="M+">0</div>
+                                <div class="hero-stat-number count-up" data-count="21" data-suffix="M+">0</div>
                                 <div class="hero-stat-text">Tests Conducted Annually</div>
                             </div>
                             <div class="hero-stat">
-                                <div class="hero-stat-number" data-count="3000" data-suffix="+">0</div>
+                                <div class="hero-stat-number count-up" data-count="3000" data-suffix="+">0</div>
                                 <div class="hero-stat-text">Collection Centers</div>
                             </div>
                             <div class="hero-stat">
-                                <div class="hero-stat-number" data-count="120" data-suffix="+">0</div>
+                                <div class="hero-stat-number count-up" data-count="120" data-suffix="+">0</div>
                                 <div class="hero-stat-text">Processing Labs</div>
                             </div>
                         </div>
@@ -286,6 +286,40 @@
 
 @section Scripts {
     <script>
+        // Handle count-up animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to animate counters
+            function animateCounters() {
+                const countElements = document.querySelectorAll('.count-up');
+                countElements.forEach(function(element) {
+                    if (element.classList.contains('counted')) return;
+
+                    // Mark as counted to prevent re-animation
+                    element.classList.add('counted');
+
+                    // Get target count and suffix
+                    const target = parseInt(element.getAttribute('data-count'));
+                    const suffix = element.getAttribute('data-suffix') || '';
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16); // 60fps
+                    let current = 0;
+
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            element.textContent = target + suffix;
+                            clearInterval(timer);
+                        } else {
+                            element.textContent = Math.floor(current) + suffix;
+                        }
+                    }, 16);
+                });
+            }
+
+            // Run animation immediately
+            animateCounters();
+        });
+
         // Function to prevent scrolling
         function preventScroll() {
             // Save current scroll position

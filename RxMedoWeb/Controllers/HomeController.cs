@@ -23,6 +23,12 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult GetStarted()
+    {
+        // Redirect to Membership page
+        return RedirectToAction("Index", "Membership");
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="modern-hero-v2" style="background-image: url('../images/pattern.svg'); background-size: 200px; background-repeat: repeat;">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative">
+        <div class="hero-content-wrapper">
+            <div class="hero-content-box">
+                <h1 class="hero-title animate-title">Your Health, Our Priority</h1>
+                <div class="title-underline animate-line"></div>
+                <p class="hero-subtitle animate-text">Join RX MEDO CARD for exclusive healthcare benefits and save up to 30% on medical services across our network of 500+ premium hospitals.</p>
+                
+                <div class="hero-stats-container">
+                    <div class="hero-stat-item animate-item" style="--delay: 0.3s">
+                        <div class="stat-number"><span class="counter" data-target="500">0</span>+</div>
+                        <div class="stat-label">Partner Hospitals</div>
+                    </div>
+                    <div class="hero-stat-item animate-item" style="--delay: 0.5s">
+                        <div class="stat-number"><span class="counter" data-target="30">0</span>%</div>
+                        <div class="stat-label">Savings on Services</div>
+                    </div>
+                    <div class="hero-stat-item animate-item" style="--delay: 0.7s">
+                        <div class="stat-number"><span class="counter" data-target="10000">0</span>+</div>
+                        <div class="stat-label">Happy Members</div>
+                    </div>
+                </div>
+                
+                <div class="hero-benefits-container animate-item" style="--delay: 0.9s">
+                    <div class="hero-benefit-item">
+                        <div class="benefit-icon"><i class="bi bi-capsule"></i></div>
+                        <div class="benefit-text">20% Off on Pharmacy</div>
+                    </div>
+                    <div class="hero-benefit-item">
+                        <div class="benefit-icon"><i class="bi bi-person-badge"></i></div>
+                        <div class="benefit-text">30% Off on Consultations</div>
+                    </div>
+                    <div class="hero-benefit-item">
+                        <div class="benefit-icon"><i class="bi bi-heart-pulse"></i></div>
+                        <div class="benefit-text">30% Off on Diagnostics</div>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons animate-item" style="--delay: 1.1s">
+                    <a asp-controller="Membership" asp-action="Index" class="hero-btn-primary">Become a Member <i class="bi bi-arrow-right"></i></a>
+                    <a asp-controller="Hospitals" asp-action="Index" class="hero-btn-secondary">Explore Network <i class="bi bi-hospital"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

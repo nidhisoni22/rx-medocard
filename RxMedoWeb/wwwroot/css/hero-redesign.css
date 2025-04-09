@@ -1,0 +1,142 @@
+/* Hero Section Redesign with Corner Images */
+
+.hero-redesign {
+  background: #001d4f;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 180px; /* Increased bottom padding to make room for images */
+  min-height: 80vh;
+}
+
+.hero-content-centered {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-benefits-centered {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  margin: 0 auto 30px;
+  max-width: 600px;
+}
+
+.hero-buttons-centered {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Corner images */
+.hero-corner-image {
+  position: absolute;
+  z-index: 2;
+  max-width: 300px; /* Reduced size */
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-corner-left {
+  left: 0;
+  bottom: 0;
+  transform: translateY(50px);
+  transition-delay: 0.5s;
+}
+
+.hero-corner-right {
+  right: 0;
+  bottom: 0;
+  transform: translateY(50px);
+  transition-delay: 0.8s;
+}
+
+/* Animation for hero content */
+.fade-in-hero {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-hero.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+/* Active state for corner images */
+.hero-corner-image.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .hero-corner-image {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-corner-image {
+    max-width: 200px;
+  }
+
+  .hero-redesign {
+    padding: 100px 0 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-corner-image {
+    max-width: 150px;
+  }
+
+  .hero-redesign {
+    padding: 80px 0 120px;
+  }
+
+  .hero-content-centered h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-corner-image {
+    max-width: 120px;
+  }
+
+  .hero-benefits-centered {
+    padding: 15px;
+  }
+}

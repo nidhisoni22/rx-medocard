@@ -1,0 +1,429 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Hero Section -->
+<section class="medicare-hero">
+    <div class="container">
+        <div class="medicare-hero-content">
+            <h1 class="medicare-hero-title">Your Health, Our Priority</h1>
+            <p class="medicare-hero-subtitle">Join RX MEDO CARD for exclusive healthcare benefits and save up to 30% on medical services across our network of 500+ premium hospitals.</p>
+            
+            <div class="medicare-search-box">
+                <h2 class="medicare-search-title">Find the right healthcare plan for you</h2>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a asp-controller="Membership" asp-action="Index" class="medicare-btn">Explore Membership Plans</a>
+                        <a asp-controller="Hospitals" asp-action="Index" class="medicare-btn-outline">Find Hospitals</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="medicare-section">
+    <div class="container">
+        <div class="medicare-section-title">
+            <h2>Our Services</h2>
+            <p>We provide a wide range of healthcare services to meet your needs with quality care and affordable prices</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="medicare-card fade-in">
+                    <div class="medicare-card-icon">
+                        <i class="bi bi-person-plus"></i>
+                    </div>
+                    <h3 class="medicare-card-title">Family Physician</h3>
+                    <p class="medicare-card-text">Personalized health solutions from our in-house Family Physicians for you & your family anytime anywhere</p>
+                    <a href="#" class="medicare-card-link">View Details <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="medicare-card fade-in fade-in-delay-1">
+                    <div class="medicare-card-icon">
+                        <i class="bi bi-heart-pulse"></i>
+                    </div>
+                    <h3 class="medicare-card-title">Diagnostic Tests</h3>
+                    <p class="medicare-card-text">Comprehensive diagnostic services including blood tests, imaging, and specialized screenings</p>
+                    <a asp-controller="Diagnostics" asp-action="Index" class="medicare-card-link">View Details <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="medicare-card fade-in fade-in-delay-2">
+                    <div class="medicare-card-icon">
+                        <i class="bi bi-hospital"></i>
+                    </div>
+                    <h3 class="medicare-card-title">Hospital Network</h3>
+                    <p class="medicare-card-text">Access to our extensive network of premium hospitals and healthcare facilities across India</p>
+                    <a asp-controller="Hospitals" asp-action="Index" class="medicare-card-link">View Details <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="medicare-card fade-in fade-in-delay-3">
+                    <div class="medicare-card-icon">
+                        <i class="bi bi-capsule"></i>
+                    </div>
+                    <h3 class="medicare-card-title">Pharmacy Discounts</h3>
+                    <p class="medicare-card-text">Exclusive discounts on prescription medications and over-the-counter products at partner pharmacies</p>
+                    <a href="#" class="medicare-card-link">View Details <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="medicare-stats">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="medicare-stat-item">
+                    <div class="medicare-stat-number"><span class="counter" data-target="500">0</span>+</div>
+                    <div class="medicare-stat-label">Partner Hospitals</div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="medicare-stat-item">
+                    <div class="medicare-stat-number"><span class="counter" data-target="30">0</span>%</div>
+                    <div class="medicare-stat-label">Savings on Services</div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="medicare-stat-item">
+                    <div class="medicare-stat-number"><span class="counter" data-target="10000">0</span>+</div>
+                    <div class="medicare-stat-label">Happy Members</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Section 1 -->
+<section class="medicare-section medicare-featured">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="medicare-featured-image fade-in">
+                    <img src="~/images/doctors.jpg" alt="Our Doctors" class="img-fluid">
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="medicare-featured-text fade-in fade-in-delay-1">
+                    <h2 class="medicare-featured-title">Our plans <span style="color: var(--primary-blue);">specialize</span> in your health</h2>
+                    <p class="medicare-featured-subtitle">From affordable medication to discounted consultations, we have expertise in making healthcare accessible for everyone. Our annual plans are designed to provide comprehensive coverage for all your medical needs.</p>
+                    
+                    <div class="medicare-featured-list">
+                        <div class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Comprehensive healthcare coverage</div>
+                        </div>
+                        
+                        <div class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Affordable annual membership</div>
+                        </div>
+                        
+                        <div class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Access to premium healthcare facilities</div>
+                        </div>
+                        
+                        <div class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Significant savings on medical expenses</div>
+                        </div>
+                    </div>
+                    
+                    <a asp-controller="Membership" asp-action="Index" class="medicare-btn-primary">
+                        View Membership Plans <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Section 2 -->
+<section class="medicare-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="medicare-featured-image fade-in">
+                    <img src="~/images/patient.png" class="img-fluid" alt="Patient Care">
+                </div>
+            </div>
+            
+            <div class="col-lg-6 order-lg-1">
+                <div class="medicare-featured-text fade-in fade-in-delay-1">
+                    <h2 class="medicare-featured-title">Find the Best Healthcare Facilities Near You</h2>
+                    <p class="medicare-featured-subtitle">Access our network of premium hospitals and clinics offering exclusive discounts for RX MEDO CARD members. Our partner facilities provide exceptional care with reduced waiting times and priority appointments.</p>
+                    
+                    <div class="medicare-featured-list">
+                        <div class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Access to 500+ hospitals across India</div>
+                        </div>
+                        
+                        <div class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Special rates for card members</div>
+                        </div>
+                        
+                        <div class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Quality healthcare in your neighborhood</div>
+                        </div>
+                    </div>
+                    
+                    <a asp-controller="Hospitals" asp-action="Index" class="medicare-btn-primary">
+                        Find Hospitals <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Programs Section -->
+<section class="medicare-section medicare-featured">
+    <div class="container">
+        <div class="medicare-section-title">
+            <h2>RxMedical Trust Programs</h2>
+            <p>Comprehensive healthcare solutions designed for your needs</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="medicare-card fade-in">
+                    <div class="medicare-card-icon">
+                        <i class="bi bi-eye"></i>
+                    </div>
+                    <h3 class="medicare-card-title">RxMedical Trust Vision</h3>
+                    <p class="medicare-card-text">Our vision is to make healthcare accessible and affordable for everyone through innovative discount programs and partnerships with quality healthcare providers.</p>
+                    <ul class="medicare-featured-list">
+                        <li class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Up to 30% discount on OPD consultations</div>
+                        </li>
+                        <li class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Reduced rates on pharmacy products</div>
+                        </li>
+                        <li class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Affordable diagnostic tests</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="medicare-card fade-in fade-in-delay-1">
+                    <div class="medicare-card-icon">
+                        <i class="bi bi-bullseye"></i>
+                    </div>
+                    <h3 class="medicare-card-title">Our Mission</h3>
+                    <p class="medicare-card-text">We are committed to bridging the gap between quality healthcare and affordability, ensuring that every individual has access to the care they deserve without financial strain.</p>
+                    <ul class="medicare-featured-list">
+                        <li class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Expanding our hospital network</div>
+                        </li>
+                        <li class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Enhancing member benefits</div>
+                            <div class="medicare-featured-list-text">Extra 5% discount for seniors</div>
+                        </li>
+                        <li class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Improving healthcare accessibility</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="medicare-card fade-in fade-in-delay-2">
+                    <div class="medicare-card-icon">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                    <h3 class="medicare-card-title">Senior Care Program</h3>
+                    <p class="medicare-card-text">Our specialized program for senior citizens offers additional benefits and discounts, recognizing the unique healthcare needs of our elderly population.</p>
+                    <ul class="medicare-featured-list">
+                        <li class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Extra 5% discount for seniors</div>
+                        </li>
+                        <li class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Priority appointment scheduling</div>
+                        </li>
+                        <li class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Home healthcare services</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="medicare-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="medicare-featured-image fade-in">
+                    <img src="~/images/rxmedical.jpeg" alt="RXMedical Trust" class="img-fluid">
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="medicare-featured-text fade-in fade-in-delay-1">
+                    <h2 class="medicare-featured-title">About RXMedical Trust</h2>
+                    <p class="medicare-featured-subtitle">Get the care you deserve at a fraction of the cost with our exclusive 1-Year Card, offering discounts of up to 30% on a wide range of medical services. Whether you need routine check-ups, specialist consultations, diagnostic tests, or treatment procedures, our card provides significant savings.</p>
+                    <p class="medicare-featured-subtitle">Valid for a full year, this offer ensures that you can access top-quality healthcare at affordable prices. Don't miss this limited-time opportunity to take control of your health!</p>
+                    
+                    <div class="medicare-featured-list">
+                        <div class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Trusted by over 10,000+ members across India</div>
+                        </div>
+                        
+                        <div class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-hospital"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Network of 500+ premium healthcare facilities</div>
+                        </div>
+                        
+                        <div class="medicare-featured-list-item">
+                            <div class="medicare-featured-list-icon">
+                                <i class="bi bi-heart-pulse"></i>
+                            </div>
+                            <div class="medicare-featured-list-text">Dedicated to making healthcare accessible for all</div>
+                        </div>
+                    </div>
+                    
+                    <a asp-controller="Membership" asp-action="Index" class="medicare-btn-primary">
+                        Join Now <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="medicare-cta">
+    <div class="container">
+        <div class="medicare-cta-content">
+            <h2 class="medicare-cta-title">Ready to save on healthcare?</h2>
+            <p class="medicare-cta-text">Join thousands of members who are already enjoying exclusive discounts and premium healthcare services with RX MEDO CARD.</p>
+            <a asp-controller="Membership" asp-action="Index" class="medicare-btn">Become a Member Today</a>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        // Scroll animation for sections
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial check on page load
+            checkVisibility();
+
+            // Check on scroll
+            window.addEventListener('scroll', function() {
+                checkVisibility();
+            });
+
+            // Counter animation for stats
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // Animation duration in milliseconds
+                const step = target / (duration / 16); // 60fps
+                
+                let current = 0;
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                // Start counter animation when element is in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCounter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(counter);
+            });
+
+            function checkVisibility() {
+                // Handle fade-in elements
+                const fadeElements = document.querySelectorAll('.fade-in');
+                fadeElements.forEach(function(element) {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
+}
