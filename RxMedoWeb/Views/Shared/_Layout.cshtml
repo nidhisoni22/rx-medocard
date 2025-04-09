@@ -42,7 +42,9 @@
     <link rel="stylesheet" href="~/css/hospital-cards.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/diagnostics.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/membership.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/offers.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/opd.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/pharmacy.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/navbar-unified.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/navbar-special-fix.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/get-started-btn.css" asp-append-version="true" />
@@ -85,6 +87,13 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link" asp-controller="Offers" asp-action="Index">
+                                <span class="nav-icon"><i class="bi bi-gift"></i></span>
+                                <span class="nav-text">Offers</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link" asp-controller="Hospitals" asp-action="Index">
                                 <span class="nav-icon"><i class="bi bi-hospital"></i></span>
                                 <span class="nav-text">Hospitals</span>
@@ -98,17 +107,18 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link" asp-controller="Pharmacy" asp-action="Index">
+                                <span class="nav-icon"><i class="bi bi-capsule"></i></span>
+                                <span class="nav-text">Pharmacy</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link" asp-controller="Diagnostics" asp-action="Index">
                                 <span class="nav-icon"><i class="bi bi-file-medical"></i></span>
                                 <span class="nav-text">Diagnostics</span>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Offers" asp-action="Index">
-                                <span class="nav-icon"><i class="bi bi-gift"></i></span>
-                                <span class="nav-text">Offers</span>
-                            </a>
-                        </li>
+                        </li
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Admin" asp-action="Login">
                                 <span class="nav-icon"><i class="bi bi-shield-lock"></i></span>
@@ -157,10 +167,11 @@
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Offers" asp-action="Index">Offers</a></li>
                         <li><a asp-controller="Hospitals" asp-action="Index">Hospitals</a></li>
                         <li><a asp-controller="OPD" asp-action="Index">OPD</a></li>
+                        <li><a asp-controller="Pharmacy" asp-action="Index">Pharmacy</a></li>
                         <li><a asp-controller="Diagnostics" asp-action="Index">Diagnostics</a></li>
-                        <li><a asp-controller="Offers" asp-action="Index">Offers</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
@@ -169,7 +180,7 @@
                         <li><a href="#">Family Physician</a></li>
                         <li><a href="#">Specialist Consultations</a></li>
                         <li><a href="#">Diagnostic Tests</a></li>
-                        <li><a href="#">Pharmacy Discounts</a></li>
+
                         <li><a href="#">Hospital Packages</a></li>
                         <li><a href="#">Senior Care</a></li>
                     </ul>

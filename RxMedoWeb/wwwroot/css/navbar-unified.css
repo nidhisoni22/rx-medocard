@@ -270,8 +270,7 @@ button.navbar-toggler,
   }
 
   /* Fix for hero sections in all pages */
-  .offers-hero,
-  .pharmacy-hero {
+  .offers-hero {
     padding-left: 0 !important;
     margin-left: 0 !important;
     overflow: visible !important;

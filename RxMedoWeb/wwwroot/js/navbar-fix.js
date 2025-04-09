@@ -1,11 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get current path
     const currentPath = window.location.pathname.toLowerCase();
-    
+
+    // Check if we're on the Offers or Pharmacy page
+    const isOffersPage = currentPath.includes('/offers');
+    const isPharmacyPage = currentPath.includes('/pharmacy');
+
+    // Log page information
+    console.log('Current path:', currentPath);
+    console.log('Is Offers page:', isOffersPage);
+    console.log('Is Pharmacy page:', isPharmacyPage);
+
     // Force the toggle button to be visible on mobile
     function forceToggleButtonVisibility() {
         const navbarToggler = document.querySelector('.navbar-toggler');
-        
+
         if (navbarToggler) {
             // Apply inline styles with !important to override any CSS
             const togglerStyles = [
@@ -31,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'box-shadow: none !important'
             ].join(';');
             navbarToggler.style.cssText = togglerStyles;
-            
+
             // Make sure the hamburger icon is visible
             const hamburgerIcon = navbarToggler.querySelector('.hamburger-icon');
             if (hamburgerIcon) {
@@ -46,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     'opacity: 1 !important'
                 ].join(';');
                 hamburgerIcon.style.cssText = hamburgerStyles;
-                
+
                 // Make sure all spans in the hamburger icon are visible
                 const spans = hamburgerIcon.querySelectorAll('span');
                 const spanStyles = [
@@ -59,23 +68,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     'visibility: visible !important',
                     'opacity: 1 !important'
                 ].join(';');
-                
+
                 spans.forEach(span => {
                     span.style.cssText = spanStyles;
                 });
-                
+
                 // Ensure the toggle button works correctly
                 navbarToggler.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    
+
                     // Toggle the collapsed class
                     if (this.classList.contains('collapsed')) {
                         this.classList.remove('collapsed');
                     } else {
                         this.classList.add('collapsed');
                     }
-                    
+
                     // Toggle the show class on navbar-collapse
                     const navbarCollapse = document.querySelector('.navbar-collapse');
                     if (navbarCollapse) {
@@ -85,13 +94,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    
+
     // Call the function initially
     forceToggleButtonVisibility();
-    
+
     // Call the function whenever the window is resized
     window.addEventListener('resize', forceToggleButtonVisibility);
-    
+
     // Run the fix when page visibility changes
     document.addEventListener('visibilitychange', function() {
         if (!document.hidden) {

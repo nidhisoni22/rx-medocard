@@ -1,0 +1,165 @@
+@{
+    ViewData["Title"] = "Pharmacy";
+}
+
+<!-- Hero Section -->
+<div class="pharmacy-hero text-white py-5">
+    <div class="container px-4">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6 col-md-6 text-md-start text-center d-flex flex-column justify-content-center">
+                <h1 class="hero-title">RX MEDO CARD<br>Pharmacy</h1>
+                <p class="hero-subtitle">Access affordable medications with expert pharmacist consultation. Enjoy exclusive discounts and convenient home delivery.</p>
+                <div class="hero-buttons mt-4">
+                    <a href="#medicines" class="btn btn-primary me-3">BROWSE MEDICINES</a>
+                    <a href="#how-it-works" class="btn btn-outline-light">GET STARTED</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 text-center animate__animated animate__fadeInRight">
+                <div class="hero-image-container">
+                    <img src="~/images/pharmacy-bg.png" alt="Pharmacy Services" class="img-fluid hero-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Search Section -->
+<section class="search-section" id="medicines">
+    <div class="container px-4">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search medicines, health products...">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Medicine Categories Section -->
+<section class="categories-section">
+    <div class="container px-4">
+        <h2 class="section-title text-center mb-5">Medicine Categories</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp">
+                <div class="category-card">
+                    <i class="bi bi-capsule category-icon"></i>
+                    <h3 class="category-title">Prescription Medicines</h3>
+                    <p class="category-description">Wide range of prescription medications at discounted prices</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="category-card">
+                    <i class="bi bi-shield-check category-icon"></i>
+                    <h3 class="category-title">Over-the-Counter</h3>
+                    <p class="category-description">Common medications available without prescription</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                <div class="category-card">
+                    <i class="bi bi-heart-pulse category-icon"></i>
+                    <h3 class="category-title">Health Supplements</h3>
+                    <p class="category-description">Vitamins and supplements for better health</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                <div class="category-card">
+                    <i class="bi bi-flower1 category-icon"></i>
+                    <h3 class="category-title">Ayurvedic Products</h3>
+                    <p class="category-description">Traditional Indian medicine products</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
+                <div class="category-card">
+                    <i class="bi bi-droplet category-icon"></i>
+                    <h3 class="category-title">Personal Care</h3>
+                    <p class="category-description">Healthcare and personal hygiene products</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 1s;">
+                <div class="category-card">
+                    <i class="bi bi-bandaid category-icon"></i>
+                    <h3 class="category-title">Medical Supplies</h3>
+                    <p class="category-description">Essential medical and first-aid supplies</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="steps-section" id="how-it-works">
+    <div class="container px-4">
+        <h2 class="section-title text-center mb-5">How It Works</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 animate__animated animate__fadeInUp">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <i class="bi bi-upload step-icon"></i>
+                    <h3 class="step-title">Upload Prescription</h3>
+                    <p class="step-description">Upload your prescription through our secure platform</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <i class="bi bi-check-circle step-icon"></i>
+                    <h3 class="step-title">Verify Details</h3>
+                    <p class="step-description">Our pharmacists verify your prescription and details</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <i class="bi bi-credit-card step-icon"></i>
+                    <h3 class="step-title">Make Payment</h3>
+                    <p class="step-description">Pay securely using your preferred payment method</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <i class="bi bi-truck step-icon"></i>
+                    <h3 class="step-title">Get Delivery</h3>
+                    <p class="step-description">Receive your medicines at your doorstep</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Elements Section -->
+<section class="trust-section">
+    <div class="container px-4">
+        <h2 class="section-title text-center mb-5">Why Choose Us</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 animate__animated animate__fadeInUp">
+                <div class="trust-item">
+                    <i class="bi bi-shield-check trust-icon"></i>
+                    <h3 class="trust-title">Licensed Partners</h3>
+                    <p class="trust-description">Network of licensed pharmacy partners</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="trust-item">
+                    <i class="bi bi-patch-check trust-icon"></i>
+                    <h3 class="trust-title">Genuine Medicine</h3>
+                    <p class="trust-description">100% genuine medicine guarantee</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                <div class="trust-item">
+                    <i class="bi bi-thermometer-half trust-icon"></i>
+                    <h3 class="trust-title">Temperature Control</h3>
+                    <p class="trust-description">Temperature-controlled supply chain</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                <div class="trust-item">
+                    <i class="bi bi-headset trust-icon"></i>
+                    <h3 class="trust-title">Expert Support</h3>
+                    <p class="trust-description">24/7 pharmacist consultation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
