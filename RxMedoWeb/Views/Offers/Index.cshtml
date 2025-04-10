@@ -3,15 +3,16 @@
 }
 
 <link rel="stylesheet" href="~/css/offers.css" />
+<link rel="stylesheet" href="~/css/components/hero.css" />
 
 <!-- Hero Section -->
-<div class="offers-hero text-white py-5">
+<div class="offers-hero text-white">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <h1 class="hero-title">Healthcare Offers</h1>
-                <h2 class="hero-subtitle-blue">Just For You</h2>
-                <p class="hero-subtitle">Discover exclusive healthcare membership plans designed to make quality medical care accessible and affordable for you and your family.</p>
+                <h2 class="hero-subtitle2-blue">Just For You</h2>
+                <div class="hero-subtitle2">Discover exclusive healthcare membership plans designed to make quality medical care accessible and affordable for you and your family.</div>
                 <div class="hero-buttons">
                     <a href="#membership-plans" class="btn btn-primary btn-lg me-3">VIEW PLANS</a>
                     <a href="#how-to-avail" class="btn btn-outline-light btn-lg">LEARN MORE</a>
@@ -30,60 +31,82 @@
 <section id="membership-plans" class="membership-plans">
     <div class="container">
         <h2 class="section-title text-center mb-3">Our Membership Plans</h2>
-        <div class="title-underline mb-4"></div>
+        
         <p class="section-subtitle text-center">Choose the perfect healthcare plan that fits your needs and budget</p>
         <div class="row d-flex justify-content-center">
             <!-- Basic Plan -->
-            <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
-                <div class="plan-card">
-                    <h3>Medocards</h3>
-                    <div class="plan-card-content">
-                        <div class="plan-price">₹3000<small>/yr</small></div>
-                        <ul class="plan-features">
-                            <li>30% Off on OPD</li>
-                            <li>20% Off on Medical</li>
-                            <li>30% Off on Diagnostics</li>
-                            <li>30% savings</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-primary w-100">GET STARTED</a>
+            <div class="row g-5 justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-12 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+            <div class="card h-100 membership-card shadow-lg hover-card">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h3 class="mb-0" style="font-size: 1.5rem;">Medocards</h3>
+                    <div class="price-tag">
+                        <span class="currency">₹</span>
+                        <span class="amount">3000</span>
+                        <span class="period">/yr</span>
                     </div>
                 </div>
-            </div>
-
-            <!-- Featured Plan -->
-            <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
-                <div class="plan-card featured">
-                    <h3>MedoInsurance</h3>
-                    <div class="plan-card-content">
-                        <div class="plan-price">₹5000<small>/yr</small></div>
-                        <ul class="plan-features">
-                            <li>All Medocards benefits</li>
-                            <li>Additional insurance coverage</li>
-                            <li>30% savings</li>
-                            <li>Priority Support</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary w-100">GET STARTED</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Premium Plan -->
-            <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
-                <div class="plan-card">
-                    <h3>Insurance Cards</h3>
-                    <div class="plan-card-content">
-                        <div class="plan-price">₹3000<small>/yr</small></div>
-                        <ul class="plan-features">
-                            <li>No medocards facility</li>
-                            <li>5 Lakh medical coverage</li>
-                            <li>29% savings</li>
-                            <li>Basic Support</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-primary w-100">GET STARTED</a>
+                <div class="card-body">
+                    <ul class="list-unstyled benefits-list">
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Flat 30% Off on OPD</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Flat 20% Off on Medical</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Flat 30% Off on Diagnostics</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>You Save 30%</li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="/Membership" class="btn btn-primary w-100">GET STARTED</a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+            <div class="card h-100 membership-card shadow-lg hover-card featured">
+
+                <div class="card-header bg-success text-white text-center py-3">
+                    <h3 class="mb-0" style="font-size: 1.5rem;">MedoInsurance Cards</h3>
+                    <div class="price-tag">
+                        <span class="currency">₹</span>
+                        <span class="amount">5000</span>
+                        <span class="period">/yr</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled benefits-list">
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Flat 30% Off on OPD</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Flat 20% Off on Medical</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Flat 30% Off on Diagnostics</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Depends upon the Insurance amount</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>You save 30%</li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="/Membership" class="btn btn-success w-100">GET STARTED</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+            <div class="card h-100 membership-card shadow-lg hover-card">
+                <div class="card-header bg-info text-white text-center py-3">
+                    <h3 class="mb-0" style="font-size: 1.5rem;">Insurance Cards</h3>
+                    <div class="price-tag">
+                        <span class="currency">₹</span>
+                        <span class="amount">3000</span>
+                        <span class="period">/yr</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled benefits-list">
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>No medocards facility</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Medical 5 Lakh</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>You save 29%</li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="/Membership" class="btn btn-info w-100 text-white">GET STARTED</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </section>
 
@@ -136,11 +159,12 @@
 </section>
 
 <!-- Medical Services Section -->
+<!-- Medical Services Section -->
 <section class="medical-services" id="medical-services">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="section-title">Our Medical Services</h2>
-            <div class="title-underline mb-4"></div>
+            
             <p class="section-subtitle">Comprehensive healthcare services provided by experienced professionals</p>
         </div>
         <div class="row">
@@ -148,61 +172,88 @@
                 <img src="~/images/medical-section-removebg.png" alt="Medical Services" class="img-fluid medical-image">
                 <div class="blob-animation"></div>
             </div>
-            <div class="col-lg-6">
-                <div class="service-grid">
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-ambulance service-icon"></i>
+            <div class="col-lg-6 col-md-6 animate__animated animate__fadeInRight">
+            <h3 class="services-heading">Our Healthcare Services</h3>
+            <p class="mb-4">We offer a wide range of medical services to meet your healthcare needs.</p>
+            <div class="row g-3">
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="service-item text-center p-3 rounded" style="background-color: rgba(0, 29, 79, 0.05);">
+                        <div class="service-icon mx-auto mb-2">
+                            <i class="bi bi-building-fill text-primary"></i>
                         </div>
-                        <div class="service-content">
-                            <h3>Ambulance</h3>
-                            <p>24/7 emergency medical transportation</p>
-                        </div>
+                        <div class="service-name">Ambulance</div>
                     </div>
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-heartbeat service-icon"></i>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="service-item text-center p-3 rounded" style="background-color: rgba(0, 29, 79, 0.05);">
+                        <div class="service-icon mx-auto mb-2">
+                            <i class="bi bi-heart-pulse text-primary"></i>
                         </div>
-                        <div class="service-content">
-                            <h3>Cardiology</h3>
-                            <p>Expert heart care and treatment</p>
-                        </div>
+                        <div class="service-name">Cardiology</div>
                     </div>
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-procedures service-icon"></i>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="service-item text-center p-3 rounded" style="background-color: rgba(0, 29, 79, 0.05);">
+                        <div class="service-icon mx-auto mb-2">
+                            <i class="bi bi-house-door-fill text-primary"></i>
                         </div>
-                        <div class="service-content">
-                            <h3>Daycare</h3>
-                            <p>Comprehensive outpatient services</p>
-                        </div>
+                        <div class="service-name">Daycare</div>
                     </div>
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-tooth service-icon"></i>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="service-item text-center p-3 rounded" style="background-color: rgba(0, 29, 79, 0.05);">
+                        <div class="service-icon mx-auto mb-2">
+                            <i class="fa-solid fa-tooth text-primary tooth-icon"></i>
                         </div>
-                        <div class="service-content">
-                            <h3>Dentistry</h3>
-                            <p>Complete dental care solutions</p>
-                        </div>
+                        <div class="service-name">Dentistry</div>
                     </div>
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="500">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-stethoscope service-icon"></i>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="service-item text-center p-3 rounded" style="background-color: rgba(0, 29, 79, 0.05);">
+                        <div class="service-icon mx-auto mb-2">
+                            <i class="bi bi-person-video3 text-primary"></i>
                         </div>
-                        <div class="service-content">
-                            <h3>OPD</h3>
-                            <p>Outpatient department services</p>
-                        </div>
+                        <div class="service-name">OPD</div>
                     </div>
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="600">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-heartbeat service-icon"></i>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="service-item text-center p-3 rounded" style="background-color: rgba(0, 29, 79, 0.05);">
+                        <div class="service-icon mx-auto mb-2">
+                            <i class="bi bi-activity text-primary"></i>
                         </div>
-                        <div class="service-content">
-                            <h3>Dermatology</h3>
-                            <p>Skin care and treatments</p>
+                        <div class="service-name">Dermatology</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="service-item text-center p-3 rounded" style="background-color: rgba(0, 29, 79, 0.05);">
+                        <div class="service-icon mx-auto mb-2">
+                            <i class="bi bi-capsule text-primary"></i>
                         </div>
+                        <div class="service-name">Pharmacy</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="service-item text-center p-3 rounded" style="background-color: rgba(0, 29, 79, 0.05);">
+                        <div class="service-icon mx-auto mb-2">
+                            <i class="bi bi-people text-primary"></i>
+                        </div>
+                        <div class="service-name">Medicine</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="service-item text-center p-3 rounded" style="background-color: rgba(0, 29, 79, 0.05);">
+                        <div class="service-icon mx-auto mb-2">
+                            <i class="bi bi-clipboard2-pulse text-primary"></i>
+                        </div>
+                        <div class="service-name">Diagnostics</div>
                     </div>
                 </div>
             </div>
