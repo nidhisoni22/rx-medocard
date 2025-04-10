@@ -26,12 +26,9 @@ RX MEDO CARD is a healthcare membership platform developed as an initiative of R
 
 A comprehensive healthcare management system that enables administrators to manage diagnostic bookings and membership applications.
 
-#### Default Admin Credentials
-```
-Username: admin
-Password: admin123
-```
-> **Note**: It is strongly recommended to change these credentials after first login for security purposes.
+#### Admin Authentication
+
+The application uses secure authentication for admin access. Follow the setup instructions in the Installation section to configure authentication properly.
 
 #### Admin Features
 
@@ -108,7 +105,7 @@ RxMedoWeb/
    git clone https://github.com/nidhisoni22/rx-medocard.git
    ```
 
-2. Update the connection string in `appsettings.json` to point to your MySQL instance
+2. Update the connection string in `appsettings.json` with your database credentials (do not commit sensitive information to source control)
 
 3. Run database migrations
    ```
@@ -122,7 +119,7 @@ RxMedoWeb/
 
 5. Access Admin Dashboard
    - Navigate to `/Admin/Login`
-   - Use the default credentials mentioned above
+   - Use your configured admin credentials
 
 ## Contributors
 
