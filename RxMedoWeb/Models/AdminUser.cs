@@ -14,6 +14,8 @@ namespace RxMedoWeb.Models
         [StringLength(100)]
         public string PasswordHash { get; set; } = string.Empty;
 
+        [Required]
+        [EmailAddress]
         [StringLength(100)]
         public string Email { get; set; } = string.Empty;
 
@@ -22,5 +24,10 @@ namespace RxMedoWeb.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public DateTime? LastLogin { get; set; }
+
+        // Password reset fields
+        public string? ResetToken { get; set; }
+
+        public DateTime? ResetTokenExpiry { get; set; }
     }
 }

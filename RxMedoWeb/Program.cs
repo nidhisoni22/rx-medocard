@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using RxMedoWeb.Data;
+using RxMedoWeb.Models;
 using RxMedoWeb.Services;
 using System;
 
@@ -36,13 +37,17 @@ catch (Exception ex)
 {
     // Log the error but continue application startup
     Console.WriteLine($"Database connection error: {ex.Message}");
-    
+
     // Register a dummy DbContext factory that returns null
     builder.Services.AddScoped<ApplicationDbContext>(provider => null);
 }
 
-// Register AuthService
+// Register services
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<EmailService>();
+
+// Configure email settings
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 
 var app = builder.Build();
 
@@ -57,7 +62,7 @@ try
             Console.WriteLine("Applying database migrations...");
             dbContext.Database.Migrate();
             Console.WriteLine("Database migrations applied successfully.");
-            
+
             // Create default admin user if not exists
             var authService = scope.ServiceProvider.GetRequiredService<AuthService>();
             await authService.CreateDefaultAdminIfNotExistsAsync();

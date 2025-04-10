@@ -1,0 +1,467 @@
+@model RxMedoWeb.Models.AdminUserListViewModel
+@{
+    ViewData["Title"] = "Admin Users";
+}
+
+<div class="admin-header d-flex flex-wrap justify-content-between align-items-center mb-4 pb-3 border-bottom">
+    <div class="d-flex align-items-center">
+        <a asp-action="Dashboard" class="btn btn-outline-primary me-3 back-btn">
+            <i class="bi bi-arrow-left"></i>
+        </a>
+        <h1 class="admin-title mb-0">Admin Users</h1>
+    </div>
+    <a asp-action="CreateAdmin" class="btn btn-primary create-admin-btn">
+        <i class="bi bi-plus-circle me-2"></i> <span class="btn-text">Create New Admin</span>
+    </a>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-6 col-lg-6">
+        <div class="dashboard-card admin-stats-card">
+            <div class="dashboard-card-header">
+                <h5 class="dashboard-card-title">Total Admins</h5>
+                <div class="dashboard-card-icon-container">
+                    <i class="bi bi-people dashboard-card-icon"></i>
+                </div>
+            </div>
+            <h2 class="dashboard-card-value">@Model.TotalAdminUsers</h2>
+            <p class="dashboard-card-description">Total admin users in the system</p>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-6">
+        <div class="dashboard-card admin-stats-card">
+            <div class="dashboard-card-header">
+                <h5 class="dashboard-card-title">Active Admins</h5>
+                <div class="dashboard-card-icon-container">
+                    <i class="bi bi-person-check dashboard-card-icon"></i>
+                </div>
+            </div>
+            <h2 class="dashboard-card-value">@Model.ActiveAdminUsers</h2>
+            <p class="dashboard-card-description">Currently active admin accounts</p>
+        </div>
+    </div>
+</div>
+
+<div class="admin-table-container admin-users-table p-4 rounded-4 shadow-sm">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+        <h5 class="mb-0 fw-bold">Admin User Accounts</h5>
+        <div class="admin-search-box w-100 w-md-auto" style="max-width: 300px;">
+            <input type="text" id="adminSearchInput" class="form-control form-control-lg rounded-pill" placeholder="Search admins...">
+            <i class="bi bi-search search-icon"></i>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="admin-table table table-hover" id="adminUsersTable">
+            <thead>
+                <tr>
+                    <th class="py-3">Username</th>
+                    <th class="py-3">Email</th>
+                    <th class="py-3">Status</th>
+                    <th class="py-3 d-none d-md-table-cell">Created</th>
+                    <th class="py-3 d-none d-lg-table-cell">Last Login</th>
+                    <th class="py-3 text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.AdminUsers)
+                {
+                    <tr>
+                        <td class="py-3"><span class="fw-medium">@user.Username</span></td>
+                        <td class="py-3">@user.Email</td>
+                        <td class="py-3">
+                            @if (user.IsActive)
+                            {
+                                <span class="status-badge status-active"><i class="bi bi-check-circle-fill me-1"></i> Active</span>
+                            }
+                            else
+                            {
+                                <span class="status-badge status-inactive"><i class="bi bi-x-circle-fill me-1"></i> Inactive</span>
+                            }
+                        </td>
+                        <td class="py-3 d-none d-md-table-cell">@user.CreatedAt.ToString("MMM dd, yyyy")</td>
+                        <td class="py-3 d-none d-lg-table-cell">
+                            @if (user.LastLogin.HasValue)
+                            {
+                                @user.LastLogin.Value.ToString("MMM dd, yyyy HH:mm")
+                            }
+                            else
+                            {
+                                <span class="text-muted">Never</span>
+                            }
+                        </td>
+                        <td class="py-3 text-end">
+                            <form asp-action="ToggleAdminStatus" method="post" class="d-inline">
+                                <input type="hidden" name="id" value="@user.Id" />
+                                @if (user.IsActive)
+                                {
+                                    <button type="submit" class="btn btn-sm btn-outline-danger action-btn px-3 py-2" onclick="return confirm('Are you sure you want to deactivate this admin user?')">
+                                        <i class="bi bi-person-x"></i> <span class="d-none d-md-inline">Deactivate</span>
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn btn-sm btn-outline-success action-btn px-3 py-2" onclick="return confirm('Are you sure you want to activate this admin user?')">
+                                        <i class="bi bi-person-check"></i> <span class="d-none d-md-inline">Activate</span>
+                                    </button>
+                                }
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @if (!Model.AdminUsers.Any())
+    {
+        <div class="alert alert-info mt-4 rounded-3 p-4">
+            <i class="bi bi-info-circle me-2"></i> No admin users found.
+        </div>
+    }
+</div>
+
+<style>
+    :root {
+        --primary-color: #1A237E;
+        --primary-light: #303F9F;
+        --primary-dark: #0D1B69;
+        --success-color: #2e7d32;
+        --danger-color: #d32f2f;
+        --border-radius: 16px;
+    }
+
+    .admin-header {
+        padding: 1.5rem 0;
+    }
+
+    .admin-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+
+    .admin-stats-card {
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: none;
+        padding: 1.75rem;
+        height: 100%;
+        background-color: white;
+    }
+
+    .admin-stats-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .dashboard-card-header {
+        margin-bottom: 1.25rem;
+    }
+
+    .dashboard-card-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 0.75rem;
+    }
+
+    .dashboard-card-icon-container {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: 0 6px 16px rgba(26, 35, 126, 0.2);
+    }
+
+    .dashboard-card-icon {
+        font-size: 1.75rem;
+    }
+
+    .dashboard-card-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .dashboard-card-description {
+        color: #6c757d;
+        font-size: 0.95rem;
+    }
+
+    .admin-users-table {
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        background-color: white;
+        margin-bottom: 2rem;
+    }
+
+    .admin-table {
+        margin-bottom: 0;
+    }
+
+    .admin-table thead th {
+        background-color: #f8f9fa;
+        border-bottom: 2px solid #e9ecef;
+        font-weight: 600;
+        color: #495057;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    .admin-table tbody td {
+        vertical-align: middle;
+        border-bottom: 1px solid #f2f2f2;
+    }
+
+    .admin-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .admin-table tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+    .status-badge {
+        padding: 0.4rem 0.85rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .status-active {
+        background-color: rgba(76, 175, 80, 0.15);
+        color: var(--success-color);
+        border: 1px solid rgba(76, 175, 80, 0.2);
+    }
+
+    .status-inactive {
+        background-color: rgba(244, 67, 54, 0.15);
+        color: var(--danger-color);
+        border: 1px solid rgba(244, 67, 54, 0.2);
+    }
+
+    .action-btn {
+        border-radius: 50px;
+        transition: all 0.2s ease;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+    }
+
+    .action-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background-color: var(--primary-color);
+        color: white;
+        box-shadow: 0 4px 10px rgba(26, 35, 126, 0.2);
+    }
+
+    .create-admin-btn {
+        border-radius: 50px;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        border: none;
+        box-shadow: 0 6px 12px rgba(26, 35, 126, 0.2);
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+    }
+
+    .create-admin-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(26, 35, 126, 0.3);
+        background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+    }
+
+    .admin-search-box {
+        position: relative;
+    }
+
+    .admin-search-box input {
+        padding-left: 3rem;
+        border: 1px solid #e9ecef;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .admin-search-box input:focus {
+        box-shadow: 0 6px 15px rgba(26, 35, 126, 0.1);
+        border-color: var(--primary-light);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 1.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+        font-size: 1.1rem;
+    }
+
+    .search-focused input {
+        box-shadow: 0 6px 15px rgba(26, 35, 126, 0.1) !important;
+        border-color: var(--primary-light) !important;
+    }
+
+    @@media (max-width: 767px) {
+        .admin-header {
+            margin-bottom: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        .admin-title {
+            font-size: 1.5rem;
+            margin-left: 0;
+        }
+
+        .btn-text {
+            display: none;
+        }
+
+        .create-admin-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .create-admin-btn i {
+            margin: 0 !important;
+            font-size: 1.25rem;
+        }
+
+        .dashboard-card-value {
+            font-size: 2rem;
+        }
+
+        .admin-stats-card {
+            padding: 1.25rem;
+        }
+
+        .dashboard-card-icon-container {
+            width: 48px;
+            height: 48px;
+        }
+
+        .admin-users-table {
+            border-radius: 12px;
+            padding: 1.25rem !important;
+        }
+    }
+</style>
+
+<script>
+    // Enhanced search functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('adminSearchInput');
+        const table = document.getElementById('adminUsersTable');
+        const tbody = table.getElementsByTagName('tbody')[0];
+        const rows = tbody.getElementsByTagName('tr');
+        const noResultsMessage = document.createElement('tr');
+
+        // Create a "no results" message row
+        noResultsMessage.innerHTML = `<td colspan="6" class="text-center py-4">
+            <div class="d-flex flex-column align-items-center">
+                <i class="bi bi-search text-muted mb-2" style="font-size: 2rem;"></i>
+                <p class="mb-0 text-muted">No matching admin users found</p>
+            </div>
+        </td>`;
+        noResultsMessage.style.display = 'none';
+        noResultsMessage.id = 'noResultsMessage';
+        tbody.appendChild(noResultsMessage);
+
+        // Add clear button to search input
+        const searchContainer = searchInput.parentElement;
+        const clearButton = document.createElement('button');
+        clearButton.className = 'btn btn-sm position-absolute end-0 top-50 translate-middle-y me-2';
+        clearButton.innerHTML = '<i class="bi bi-x-circle"></i>';
+        clearButton.style.display = 'none';
+        clearButton.style.background = 'transparent';
+        clearButton.style.border = 'none';
+        clearButton.style.color = '#6c757d';
+        clearButton.style.zIndex = '5';
+        searchContainer.appendChild(clearButton);
+
+        // Function to perform search
+        function performSearch() {
+            const searchText = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            // Show/hide clear button
+            clearButton.style.display = searchText.length > 0 ? 'block' : 'none';
+
+            for (let i = 0; i < rows.length; i++) {
+                // Skip the no results message row
+                if (rows[i].id === 'noResultsMessage') continue;
+
+                const username = rows[i].getElementsByTagName('td')[0].textContent.toLowerCase();
+                const email = rows[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+                const status = rows[i].getElementsByTagName('td')[2].textContent.toLowerCase();
+
+                if (searchText === '' ||
+                    username.includes(searchText) ||
+                    email.includes(searchText) ||
+                    status.includes(searchText)) {
+                    rows[i].style.display = '';
+                    visibleCount++;
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+
+            // Show/hide no results message
+            noResultsMessage.style.display = (visibleCount === 0 && searchText !== '') ? '' : 'none';
+        }
+
+        // Event listeners
+        searchInput.addEventListener('keyup', performSearch);
+        searchInput.addEventListener('search', performSearch); // For when the 'x' in the search field is clicked
+
+        // Clear button functionality
+        clearButton.addEventListener('click', function() {
+            searchInput.value = '';
+            performSearch();
+            searchInput.focus();
+        });
+
+        // Add focus effects to search box
+        searchInput.addEventListener('focus', function() {
+            searchContainer.classList.add('search-focused');
+        });
+
+        searchInput.addEventListener('blur', function() {
+            searchContainer.classList.remove('search-focused');
+        });
+    });
+</script>
