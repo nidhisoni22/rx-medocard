@@ -39,6 +39,12 @@
     background: #f8f9fa;
 }
 
+/* Ensure consistent card sizing */
+.categories-section .col-lg-4,
+.categories-section .col-md-6 {
+    display: flex;
+}
+
 .category-card {
     background: white;
     border-radius: 10px;
@@ -47,6 +53,12 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    height: 250px; /* Fixed height for all cards */
+    width: 100%; /* Full width of the column */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .category-card:hover {
@@ -58,6 +70,10 @@
     font-size: 2.5rem;
     color: #001d4f;
     margin-bottom: 1rem;
+    height: 50px; /* Fixed height for icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .category-title {
@@ -65,12 +81,18 @@
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    min-height: 30px; /* Ensure consistent height for titles */
 }
 
 .category-description {
     font-family: 'Quicksand', sans-serif;
     color: #6c757d;
     font-size: 0.9rem;
+    min-height: 60px; /* Ensure consistent height for descriptions */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 /* How It Works Section */
@@ -196,11 +218,11 @@
     .pharmacy-hero .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .pharmacy-hero .hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .pharmacy-hero {
         min-height: auto;
         padding-bottom: 3rem;
@@ -212,17 +234,19 @@
         font-size: 2rem;
         text-align: center;
     }
-    
+
     .pharmacy-hero .hero-subtitle {
         text-align: center;
     }
-    
+
     .hero-buttons {
         text-align: center;
     }
-    
+
     .category-card {
         margin-bottom: 1.5rem;
+        height: 250px; /* Maintain fixed height on mobile */
+        width: 100%;
     }
 }
 
@@ -230,11 +254,11 @@
     .pharmacy-hero .hero-title {
         font-size: 1.75rem;
     }
-    
+
     .search-input {
         padding: 0.75rem 2.5rem;
     }
-    
+
     .step-card {
         padding: 1.5rem;
     }
